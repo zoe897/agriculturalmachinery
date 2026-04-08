@@ -10,12 +10,12 @@
     "logoName": ""
   },
   "hero": {
-    "welcomeText": "Hello Word",
+    "welcomeText": "Farming as a Passion",
     "mainHeading": "WELCOME TO HECOTH",
-    "subtitle": "We exist to help your financial journey from start to finish. Just tell us your goals and we make it happen.",
+    "subtitle": "To be the world's most reliable bridge for agricultural excellence, empowering global farmers and dealers with high-performance machinery and sustainable irrigation solutions.",
     "ctaButton": "Discover our products",
     "secondaryButton": "Contact us",
-    "yearsInBusiness": "35+",
+    "yearsInBusiness": "17+",
     "transactionsProcessed": "$1.5M",
     "customerSatisfaction": "98.2%",
     "phoneNumber": "+86 19743003775  +86 13066010625"
@@ -23,12 +23,12 @@
   "service": {
     "welcomeText": "Why Choose Us?",
     "mainHeading": "Solutions tailored to your needs",
-    "subtitle": "Ultrices tellus - luctus nec, luctus consectetur adipiscing elit tellus mattis ullamcorper dapibus.",
+    "subtitle": "We don't just sell machines; we provide answers.",
      "list": [
-      { "title": "Investor & fund management", "description": "Suspendisse dignissim sapien vitae placerat tristique. Suspendisse faucibus sed arcu vitae rutrum. Vestibulum pellentesque libero nec lacus congue laoreet lorem ipsum amet metus .", "icon": "Globe" },
-      { "title": "Crypto currency operations", "description": "Suspendisse dignissim sapien vitae placerat tristique. Suspendisse faucibus sed arcu vitae rutrum. Vestibulum pellentesque libero nec lacus congue laoreet lorem ipsum amet metus .", "icon": "Bitcoin" },
-      { "title": "Financial consulting", "description": "Suspendisse dignissim sapien vitae placerat tristique. Suspendisse faucibus sed arcu vitae rutrum. Vestibulum pellentesque libero nec lacus congue laoreet lorem ipsum amet metus .", "icon": "CircleDollarSign" },
-      { "title": "Wealth Planning", "description": "Suspendisse dignissim sapien vitae placerat tristique. Suspendisse faucibus sed arcu vitae rutrum. Vestibulum pellentesque libero nec lacus congue laoreet lorem ipsum amet metus .", "icon": "Globe" }
+      { "title": "17 Years of Industry Authority", "description": "Over a decade of experience means we understand soil conditions, machine durability, and the specific needs of different global markets. We don’t just sell; we consult.", "icon": "Globe" },
+      { "title": "One-Stop Sourcing Hub", "description": "From heavy-duty tractors and excavators to delicate drip irrigation tapes and spare parts, we consolidate your entire supply chain, saving you time and logistics costs.", "icon": "Bitcoin" },
+      { "title": "Rigorous Quality Assurance", "description": "Every product undergoes a multi-stage inspection process before shipment. Our commitment to "Quality First" ensures that your machinery arrives field-ready and built to last.", "icon": "CircleDollarSign" },
+      { "title": "Lifelong Spare Parts Support", "description": "We recognize that a machine is only as good as its uptime. We maintain a robust inventory of genuine spare parts, ensuring your operations never grind to a halt.", "icon": "Globe" }
     ]
   },
   "partners": [
@@ -83,7 +83,7 @@
     "hero": {
       "subtitle": "About Our Company",
       "title": "Your Trusted Global Manufacturing Partner",
-      "description": "We are a leading manufacturer and exporter with over 15 years of experience. We specialize in providing high-quality OEM & ODM solutions for clients worldwide. Our commitment to innovation, strict quality control, and customer satisfaction has made us a preferred partner in the global market.",
+      "description": "With 16 years of deep-rooted expertise, Jinan Hecoth is more than just an exporter; we are your strategic sourcing partner in China. We specialize in a comprehensive range of agricultural equipment—from powerful tractors and tillage tools like disc harrows and plows, to precision irrigation systems and mini construction machinery. Based in Jinan, we combine industrial strength with rigorous quality control to ensure every piece of equipment meets international standards",
       "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1470&auto=format&fit=crop",
       "highlights": [
         "15+ Years of Manufacturing Experience",
@@ -93,10 +93,10 @@
       ]
     },
     "stats": [
-      { "value": "15+", "label": "Years Experience" },
-      { "value": "50+", "label": "Countries Exported" },
-      { "value": "10,000㎡", "label": "Factory Area" },
-      { "value": "100%", "label": "Quality Inspection" }
+      { "value": "17+", "label": "17+ Years of Industry Mastery" },
+      { "value": "50+", "label": "Serving 50+ Global Markets" },
+      { "value": "10,000㎡", "label": "10,000㎡ Integrated Production Base" },
+      { "value": "100%", "label": "100% Precision-Tested Guarantee" }
     ],
     "features": {
       "title": "Why Partner With Us?",
@@ -105,17 +105,17 @@
         {
           "icon": "Factory",
           "title": "OEM & ODM Capability",
-          "description": "Strong R&D team and flexible production lines to meet your customized requirements perfectly."
+          "description": "Strong R&D team and flexible production lines to customize machinery specifications, attachment compatibility, and regional adaptations perfectly."
         },
         {
           "icon": "ShieldCheck",
           "title": "Strict Quality Control",
-          "description": "From raw materials to final packaging, every step is strictly monitored to ensure zero defects."
+          "description": "From forging steel to final field testing, every step is strictly monitored to ensure your equipment survives the toughest working conditions."
         },
         {
           "icon": "Globe",
           "title": "Global Export Experience",
-          "description": "Familiar with international trade standards, certifications, and smooth customs clearance."
+          "description": "Familiar with international trade standards, EPA/CE certifications, and secure heavy-duty loading for smooth customs clearance."
         },
         {
           "icon": "Truck",
@@ -130,15 +130,15 @@
         {
           "icon": "Users",
           "title": "24/7 Professional Support",
-          "description": "Our multilingual sales team is always ready to provide rapid responses and dedicated service."
+          "description": "Our multilingual team provides technical troubleshooting and parts manual guidance with rapid responses and dedicated service."
         }
       ]
     }
   },
   "contact": {
-    "email": "inquiry@yourfactory.com",
-    "phone": "+86 136 5661 7631",
-    "address": "123 Business Avenue, Tech Industrial Zone, Shenzhen, China"
+    "email": "zoe@annetop.com  anna@annetop.com",
+    "phone": "+86 19743003775  +86 13066010625",
+    "address": "Room 2213, Building C , Rongsheng Times International Plaza,Licheng District, Jinan City, Shandong ,China"
   },
   "seo":{
     "index":{
