@@ -1,0 +1,33 @@
+{
+  "name": "fuwuzhan",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt generate",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+      "deploy": "wrangler pages deploy .output/public"
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.12.0",
+    "@vee-validate/zod": "^4.15.1",
+    "better-sqlite3": "^12.8.0",
+    "gsap": "^3.14.2",
+    "nodemailer": "^8.0.2",
+    "nuxt": "^3.21.2",
+    "svg-captcha": "^1.4.0",
+    "vee-validate": "^4.15.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@nuxtjs/sitemap": "^7.6.0",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@tailwindcss/postcss": "^4.2.1",
+    "autoprefixer": "^10.4.27",
+    "lucide-vue-next": "^0.577.0",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.1"
+  },
+  "packageManager": "pnpm@10.5.2+sha512.da9dc28cd3ff40d0592188235ab25d3202add8a207afbedc682220e4a0029ffbff4562102b9e6e46b4e3f9e8bd53e6d05de48544b0c57d4b0179e22c76d1199b"
+}

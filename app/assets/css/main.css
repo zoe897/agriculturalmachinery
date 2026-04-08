@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+  scale: 0.99;
+}
+
+/* 2. 定义字体文件 (注意路径和后缀必须对应) */

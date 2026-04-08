@@ -1,0 +1,36 @@
+name: Deploy Template to Aliyun OSS
+
+on:
+  push:
+    branches:
+      - main # 或者你的主分支名
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install and Build
+        run: |
+          npm install --legacy-peer-deps
+          NUXT_APP_BASE_URL=/previews/${{ github.event.repository.name }}/ npm run generate
+
+      - name: Setup ossutil
+        uses: manyuanrong/setup-ossutil@v2.0
+        with:
+          # 这里的变量会自动读取你在组织（Organization）里配置的密钥
+          endpoint: "oss-cn-hangzhou.aliyuncs.com" 
+          access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+
+      - name: Upload to OSS
+        run: |
+          # 建议上传到以仓库名命名的子文件夹中，方便管理
+          # ${{ github.event.repository.name }} 会自动获取当前仓库名 "template01"
+          ossutil cp -r .output/public/ oss://daddytemplate/previews/${{ github.event.repository.name }}/ -f

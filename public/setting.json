@@ -1,0 +1,163 @@
+{
+  "base":{
+    "email": "inofo@daddytemplate.com",
+    "companyName": "1daddytemplate Corporate",
+    "phone": "+86 (136) 5661-7631",
+    "address": "123 Main St, Anytown, CHina"
+  },
+  "logo": {
+    "logoUrl": "/img/logo2.svg",
+    "logoName": ""
+  },
+  "hero": {
+    "welcomeText": "Hello Word",
+    "mainHeading": "欢迎来到老爹模板 www.daddytemplate.com",
+    "subtitle": "We exist to help your financial journey from start to finish. Just tell us your goals and we make it happen.",
+    "ctaButton": "Discover our products",
+    "secondaryButton": "Contact us",
+    "yearsInBusiness": "35+",
+    "transactionsProcessed": "$1.5M",
+    "customerSatisfaction": "98.2%",
+    "phoneNumber": "+86 (136) 5661-7631"
+  },
+  "service": {
+    "welcomeText": "Why Choose Us?",
+    "mainHeading": "Solutions tailored to your needs",
+    "subtitle": "Ultrices tellus - luctus nec, luctus consectetur adipiscing elit tellus mattis ullamcorper dapibus.",
+     "list": [
+      { "title": "Investor & fund management", "description": "Suspendisse dignissim sapien vitae placerat tristique. Suspendisse faucibus sed arcu vitae rutrum. Vestibulum pellentesque libero nec lacus congue laoreet lorem ipsum amet metus .", "icon": "Globe" },
+      { "title": "Crypto currency operations", "description": "Suspendisse dignissim sapien vitae placerat tristique. Suspendisse faucibus sed arcu vitae rutrum. Vestibulum pellentesque libero nec lacus congue laoreet lorem ipsum amet metus .", "icon": "Bitcoin" },
+      { "title": "Financial consulting", "description": "Suspendisse dignissim sapien vitae placerat tristique. Suspendisse faucibus sed arcu vitae rutrum. Vestibulum pellentesque libero nec lacus congue laoreet lorem ipsum amet metus .", "icon": "CircleDollarSign" },
+      { "title": "Wealth Planning", "description": "Suspendisse dignissim sapien vitae placerat tristique. Suspendisse faucibus sed arcu vitae rutrum. Vestibulum pellentesque libero nec lacus congue laoreet lorem ipsum amet metus .", "icon": "Globe" }
+    ]
+  },
+  "partners": [
+    {
+      "name": "North Partners",
+      "logo": "https://the7.io/fse-corporate/wp-content/uploads/sites/142/2025/08/Slide-3_2-logo-6.svg"
+    },
+    {
+      "name": "Eclipto",
+      "logo": "https://the7.io/fse-corporate/wp-content/uploads/sites/142/2025/08/Slide-3_2-logo-7.svg"
+    },
+    {
+      "name": "Astra",
+      "logo": "https://the7.io/fse-corporate/wp-content/uploads/sites/142/2025/08/Slide-3_2-logo-4.svg"
+    },
+    {
+      "name": "ZentyGroup",
+      "logo": "https://the7.io/fse-corporate/wp-content/uploads/sites/142/2025/08/Slide-3_2-logo-1.svg"
+    },
+    {
+      "name": "Gravix",
+      "logo": "https://the7.io/fse-corporate/wp-content/uploads/sites/142/2025/08/Slide-3_2-logo-9.svg"
+    }
+  ],
+  "footer":{
+    "description": "Building the foundation for modern investors. We provide professional financial solutions to help your business grow globally."
+  },
+  "productFeature": {
+
+    "secondSection": {
+      "subtitle": "1Top-notch financial stability",
+      "title": "1Investing with clarity, navigating with confidence",
+      "description": "1Ut elit tellus - luctus nec, luctus consectetur adipiscing elit tellus mattis pulvinar corper mattis nisl pellentesque elit tellus nec elit dapibus. Lorem aliquam commodo, ipsum corper mattis pulvinar dapibus luctus consectetur adipiscing eros nisl pellentesque elit tellus nec elit tellus nec ullam lorvm nulla ipsum corper mattis pulvinar dapibu.",
+      "image": "https://the7.io/fse-corporate/wp-content/uploads/sites/142/2025/03/landsc-2x3-094.webp",
+      "imageAlt": "Professional working on laptop",
+      "customerSatisfaction": "95%",
+      "featureBadges": [
+        {
+          "title": "1Modern professional approach",
+          "description": "1Tailored strategies for your unique financial goals",
+          "icon": "https://api.iconify.design/lucide:shield-check.svg?color=%233b82f6"
+        },
+        {
+          "title": "1Guaranteed capital growth",
+          "description": "1Secure investments with proven returns",
+          "icon": "https://api.iconify.design/lucide:trending-up.svg?color=%233b82f6"
+        }
+      ]
+    }
+  },
+  "about": {
+    "hero": {
+      "subtitle": "About Our Company",
+      "title": "Your Trusted Global Manufacturing Partner",
+      "description": "We are a leading manufacturer and exporter with over 15 years of experience. We specialize in providing high-quality OEM & ODM solutions for clients worldwide. Our commitment to innovation, strict quality control, and customer satisfaction has made us a preferred partner in the global market.",
+      "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1470&auto=format&fit=crop",
+      "highlights": [
+        "15+ Years of Manufacturing Experience",
+        "Comprehensive OEM/ODM Services",
+        "ISO 9001 Certified Quality Control",
+        "Global Supply Chain Network"
+      ]
+    },
+    "stats": [
+      { "value": "15+", "label": "Years Experience" },
+      { "value": "50+", "label": "Countries Exported" },
+      { "value": "10,000㎡", "label": "Factory Area" },
+      { "value": "100%", "label": "Quality Inspection" }
+    ],
+    "features": {
+      "title": "Why Partner With Us?",
+      "description": "We don't just supply products; we provide complete solutions to help your business grow and stay competitive in the market.",
+      "list": [
+        {
+          "icon": "Factory",
+          "title": "OEM & ODM Capability",
+          "description": "Strong R&D team and flexible production lines to meet your customized requirements perfectly."
+        },
+        {
+          "icon": "ShieldCheck",
+          "title": "Strict Quality Control",
+          "description": "From raw materials to final packaging, every step is strictly monitored to ensure zero defects."
+        },
+        {
+          "icon": "Globe",
+          "title": "Global Export Experience",
+          "description": "Familiar with international trade standards, certifications, and smooth customs clearance."
+        },
+        {
+          "icon": "Truck",
+          "title": "Fast & Reliable Delivery",
+          "description": "Optimized supply chain and strategic logistics partnerships ensure your goods arrive on time."
+        },
+        {
+          "icon": "Settings",
+          "title": "Advanced Technology",
+          "description": "Equipped with state-of-the-art machinery to guarantee precision, efficiency, and scale."
+        },
+        {
+          "icon": "Users",
+          "title": "24/7 Professional Support",
+          "description": "Our multilingual sales team is always ready to provide rapid responses and dedicated service."
+        }
+      ]
+    }
+  },
+  "contact": {
+    "email": "inquiry@yourfactory.com",
+    "phone": "+86 136 5661 7631",
+    "address": "123 Business Avenue, Tech Industrial Zone, Shenzhen, China"
+  },
+  "seo":{
+    "index":{
+        "title": "老爹模板 - 首页",
+        "description": "老爹模板为外贸企业提供免费模板,帮助他们快速启动业务,提高效率。",
+        "ogImage": "/default-og.jpg",
+        "twitterCard": "summary_large_image"
+    },
+    "about":{
+        "title": "老爹模板 - 关于我们",
+        "description": "老爹模板为外贸企业提供免费模板,帮助他们快速启动业务,提高效率。",
+        "ogImage": "/default-og.jpg",
+        "twitterCard": "summary_large_image"
+    },
+    "contact":{
+        "title": "老爹模板 - 联系我们",
+        "description": "老爹模板为外贸企业提供免费模板,帮助他们快速启动业务,提高效率。",
+        "ogImage": "/default-og.jpg",
+        "twitterCard": "summary_large_image"
+    }
+  }
+}
