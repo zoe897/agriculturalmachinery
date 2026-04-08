@@ -27,7 +27,7 @@
      "list": [
       { "title": "17 Years of Industry Authority", "description": "Over a decade of experience means we understand soil conditions, machine durability, and the specific needs of different global markets. We don’t just sell; we consult.", "icon": "Globe" },
       { "title": "One-Stop Sourcing Hub", "description": "From heavy-duty tractors and excavators to delicate drip irrigation tapes and spare parts, we consolidate your entire supply chain, saving you time and logistics costs.", "icon": "Bitcoin" },
-      { "title": "Rigorous Quality Assurance", "description": "Every product undergoes a multi-stage inspection process before shipment. Our commitment to "Quality First" ensures that your machinery arrives field-ready and built to last.", "icon": "CircleDollarSign" },
+      { "title": "Rigorous Quality Assurance", "description": "Every product undergoes a multi-stage inspection process before shipment. Our commitment to "Quality First " ensures that your machinery arrives field-ready and built to last.", "icon": "CircleDollarSign" },
       { "title": "Lifelong Spare Parts Support", "description": "We recognize that a machine is only as good as its uptime. We maintain a robust inventory of genuine spare parts, ensuring your operations never grind to a halt.", "icon": "Globe" }
     ]
   },
@@ -83,7 +83,7 @@
     "hero": {
       "subtitle": "About Our Company",
       "title": "Your Trusted Global Manufacturing Partner",
-      "description": "With 16 years of deep-rooted expertise, Jinan Hecoth is more than just an exporter; we are your strategic sourcing partner in China. We specialize in a comprehensive range of agricultural equipment—from powerful tractors and tillage tools like disc harrows and plows, to precision irrigation systems and mini construction machinery. Based in Jinan, we combine industrial strength with rigorous quality control to ensure every piece of equipment meets international standards",
+      "description": "With 17 years of deep-rooted expertise, Jinan Hecoth is more than just an exporter; we are your strategic sourcing partner in China. We specialize in a comprehensive range of agricultural equipment—from powerful tractors and tillage tools like disc harrows and plows, to precision irrigation systems and mini construction machinery. Based in Jinan, we combine industrial strength with rigorous quality control to ensure every piece of equipment meets international standards",
       "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1470&auto=format&fit=crop",
       "highlights": [
         "15+ Years of Manufacturing Experience",
