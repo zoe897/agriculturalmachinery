@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 强制导航栏磨砂效果 */
 nav, header {
     background-color: rgba(0, 0, 0, 0.3) !important; /* 30%透明黑色 */
     backdrop-filter: blur(12px) !important;        /* 磨砂模糊 */
