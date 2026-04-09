@@ -1,18 +1,31 @@
 <template>
     <nav :class="[
-        'fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]',
-        isScrolled
-            ? 'bg-[#001151]/85 backdrop-blur-xl border-b border-white/10 shadow-lg '
-            : 'bg-[#001151] py-2'
-    ]">
+        <nav :class="[
+    'fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]',
+    isScrolled
+        ? 'bg-black/30 backdrop-blur-xl border-b border-white/10 shadow-lg py-1' 
+        : 'bg-transparent backdrop-blur-sm py-4'
+]">
         <!-- ... (Navbar code remains the same as previous) ... -->
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between  h-20">
                 <!-- Logo Area -->
                 <div class="transition-all duration-500" :class="isScrolled ? 'scale-90' : 'scale-100'">
-                    <NuxtLink to="/" class="flex items-center gap-3 py-4 group">
-                        <div class="flex w-10 h-10 items-center justify-center">
-                            <img v-if="siteConfig?.logo?.logoUrl" :src="siteConfig?.logo?.logoUrl" alt="Company Logo"
+                    <div class="transition-all duration-500" :class="isScrolled ? 'scale-95' : 'scale-100'">
+    <NuxtLink to="/" class="flex items-center gap-3 py-2 group">
+        <!-- 这里的 w-10 h-10 删掉，改为自适应高度 -->
+        <div class="flex h-12 md:h-16 items-center justify-center"> 
+            <img v-if="siteConfig?.logo?.logoUrl" 
+                 :src="siteConfig?.logo?.logoUrl" 
+                 alt="Company Logo"
+                 class="h-full w-auto object-contain filter drop-shadow-lg">
+        </div>
+        <!-- 如果你有 logoName，确保它是白色加粗的 -->
+        <span class="text-2xl font-extrabold text-white tracking-tight uppercase drop-shadow-md">
+            {{ siteConfig?.logo?.logoName }}
+        </span>
+    </NuxtLink>
+</div>
                                 class="w-full h-full object-contain">
                         </div>
                         <span class="text-2xl font-extrabold text-white tracking-tight uppercase">{{

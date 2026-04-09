@@ -3,9 +3,9 @@
 @tailwind utilities;
 /* 强制放大白色 Logo 并增加清晰阴影 */
 img[src*="logo-white"] {
-    height: 50px !important; /* 强制高度增加到50px，如果还觉得小，可以改到60px */
-    width: auto !important;
-    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.6)) !important;
+    height: 50px ; /* 强制高度增加到50px，如果还觉得小，可以改到60px */
+    width: auto ;
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.6)) ;
     transition: all 0.3s ease;
 }
 
@@ -15,16 +15,16 @@ img[src*="logo-white"]:hover {
 }
 /* 强制穿透所有层级实现磨砂 */
 header, .header, nav, [class*="nav"] {
-    background-color: rgba(0, 17, 81, 0.5) !important; /* 保留一点品牌蓝，但只有50%透明度 */
-    backdrop-filter: blur(15px) !important;           /* 强力磨砂模糊 */
-    -webkit-backdrop-filter: blur(15px) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-    position: fixed !important;
-    width: 100% !important;
+    background-color: rgba(0, 17, 81, 0.5) ; /* 保留一点品牌蓝，但只有50%透明度 */
+    backdrop-filter: blur(15px) ;           /* 强力磨砂模糊 */
+    -webkit-backdrop-filter: blur(15px) ;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) ;
+    position: fixed ;
+    width: 100% ;
 }
 
 /* 确保导航栏里的文字是白色的 */
 header a, nav a {
-    color: white !important;
+    color: white ;
     text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
 }
