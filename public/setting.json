@@ -1,5 +1,5 @@
 {
-  "base":{
+  "base": {
     "email": "zoe@annetop.com  anna@annetop.com",
     "companyName": "JINAN HECOTH INTERNATIONAL TRADING CO., LTD.",
     "phone": "+86 19743003775  +86 13066010625",
@@ -16,7 +16,7 @@
     "ctaButton": "Discover our products",
     "secondaryButton": "Contact us",
     "yearsInBusiness": "17+",
-    "transactionsProcessed": "$1.5M",
+    "transactionsProcessed": "$1.5M+",
     "customerSatisfaction": "98.2%",
     "phoneNumber": "+86 19743003775  +86 13066010625"
   },
@@ -24,57 +24,54 @@
     "welcomeText": "Why Choose Us?",
     "mainHeading": "Solutions tailored to your needs",
     "subtitle": "We don't just sell machines; we provide answers.",
-     "list": [
-      { "title": "17 Years of Industry Authority", "description": "Over a decade of experience means we understand soil conditions, machine durability, and the specific needs of different global markets. We don’t just sell; we consult.", "icon": "Globe" },
-      { "title": "One-Stop Sourcing Hub", "description": "From heavy-duty tractors and excavators to delicate drip irrigation tapes and spare parts, we consolidate your entire supply chain, saving you time and logistics costs.", "icon": "Bitcoin" },
-      { "title": "Rigorous Quality Assurance", "description": "Every product undergoes a multi-stage inspection process before shipment. Our commitment to "Quality First " ensures that your machinery arrives field-ready and built to last.", "icon": "CircleDollarSign" },
-      { "title": "Lifelong Spare Parts Support", "description": "We recognize that a machine is only as good as its uptime. We maintain a robust inventory of genuine spare parts, ensuring your operations never grind to a halt.", "icon": "Globe" }
+    "list": [
+      {
+        "title": "17 Years of Industry Authority",
+        "description": "Over a decade of experience means we understand soil conditions, machine durability, and the specific needs of different global markets. We don’t just sell; we consult.",
+        "icon": "Globe"
+      },
+      {
+        "title": "One-Stop Sourcing Hub",
+        "description": "From heavy-duty tractors and excavators to delicate drip irrigation tapes and spare parts, we consolidate your entire supply chain, saving you time and logistics costs.",
+        "icon": "Truck"
+      },
+      {
+        "title": "Rigorous Quality Assurance",
+        "description": "Every product undergoes a multi-stage inspection process before shipment. Our commitment to 'Quality First' ensures that your machinery arrives field-ready and built to last.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "Lifelong Spare Parts Support",
+        "description": "We recognize that a machine is only as good as its uptime. We maintain a robust inventory of genuine spare parts, ensuring your operations never grind to a halt.",
+        "icon": "Settings"
+      }
     ]
   },
   "partners": [
-    {
-      "name": "North Partners",
-      "logo": "https://the7.io/fse-corporate/wp-content/uploads/sites/142/2025/08/Slide-3_2-logo-6.svg"
-    },
-    {
-      "name": "Eclipto",
-      "logo": "https://the7.io/fse-corporate/wp-content/uploads/sites/142/2025/08/Slide-3_2-logo-7.svg"
-    },
-    {
-      "name": "Astra",
-      "logo": "https://the7.io/fse-corporate/wp-content/uploads/sites/142/2025/08/Slide-3_2-logo-4.svg"
-    },
-    {
-      "name": "ZentyGroup",
-      "logo": "https://the7.io/fse-corporate/wp-content/uploads/sites/142/2025/08/Slide-3_2-logo-1.svg"
-    },
-    {
-      "name": "Gravix",
-      "logo": "https://the7.io/fse-corporate/wp-content/uploads/sites/142/2025/08/Slide-3_2-logo-9.svg"
-    }
+    { "name": "Global Agriculture", "logo": "https://api.iconify.design/lucide:tractor.svg" },
+    { "name": "Irrigation Pro", "logo": "https://api.iconify.design/lucide:droplets.svg" }
   ],
-  "footer":{
-    "description": "Building the foundation for modern investors. We provide professional financial solutions to help your business grow globally."
+  "footer": {
+    "description": "Jinan Hecoth: 17+ years of expertise in agricultural machinery and sourcing. Your professional partner for tractors, tillage tools, and precision irrigation globally."
   },
   "productFeature": {
-
     "secondSection": {
-      "subtitle": "1Top-notch financial stability",
-      "title": "1Investing with clarity, navigating with confidence",
-      "description": "1Ut elit tellus - luctus nec, luctus consectetur adipiscing elit tellus mattis pulvinar corper mattis nisl pellentesque elit tellus nec elit dapibus. Lorem aliquam commodo, ipsum corper mattis pulvinar dapibus luctus consectetur adipiscing eros nisl pellentesque elit tellus nec elit tellus nec ullam lorvm nulla ipsum corper mattis pulvinar dapibu.",
-      "image": "https://the7.io/fse-corporate/wp-content/uploads/sites/142/2025/03/landsc-2x3-094.webp",
-      "imageAlt": "Professional working on laptop",
-      "customerSatisfaction": "95%",
+      "subtitle": "Engineered for Durability",
+      "title": "High-Performance Machinery, Proven Reliability",
+      "description": "Hecoth delivers robust farming solutions—from 4WD tractors to high-precision tillage tools. Our machinery is tested in the harshest environments to ensure your productivity never stops. We focus on maximizing your ROI through lower maintenance and higher field efficiency.",
+      "image": "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=1470&auto=format&fit=crop",
+      "imageAlt": "Tractor working in the field",
+      "customerSatisfaction": "99.9%",
       "featureBadges": [
         {
-          "title": "1Modern professional approach",
-          "description": "1Tailored strategies for your unique financial goals",
-          "icon": "https://api.iconify.design/lucide:shield-check.svg?color=%233b82f6"
+          "title": "Heavy-Duty Construction",
+          "description": "Built with high-grade steel for maximum lifespan in tough soils.",
+          "icon": "https://api.iconify.design/lucide:anvil.svg?color=%2316a34a"
         },
         {
-          "title": "1Guaranteed capital growth",
-          "description": "1Secure investments with proven returns",
-          "icon": "https://api.iconify.design/lucide:trending-up.svg?color=%233b82f6"
+          "title": "Optimized Efficiency",
+          "description": "Advanced tech to reduce fuel consumption and increase work speed.",
+          "icon": "https://api.iconify.design/lucide:zap.svg?color=%2316a34a"
         }
       ]
     }
@@ -86,17 +83,17 @@
       "description": "With 17 years of deep-rooted expertise, Jinan Hecoth is more than just an exporter; we are your strategic sourcing partner in China. We specialize in a comprehensive range of agricultural equipment—from powerful tractors and tillage tools like disc harrows and plows, to precision irrigation systems and mini construction machinery. Based in Jinan, we combine industrial strength with rigorous quality control to ensure every piece of equipment meets international standards",
       "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1470&auto=format&fit=crop",
       "highlights": [
-        "15+ Years of Manufacturing Experience",
+        "17+ Years of Industry Experience",
         "Comprehensive OEM/ODM Services",
-        "ISO 9001 Certified Quality Control",
+        "Strict Quality Control System",
         "Global Supply Chain Network"
       ]
     },
     "stats": [
-      { "value": "17+", "label": "17+ Years of Industry Mastery" },
-      { "value": "50+", "label": "Serving 50+ Global Markets" },
-      { "value": "10,000㎡", "label": "10,000㎡ Integrated Production Base" },
-      { "value": "100%", "label": "100% Precision-Tested Guarantee" }
+      { "value": "17+", "label": "Years of Industry Mastery" },
+      { "value": "50+", "label": "Global Markets Served" },
+      { "value": "10,000㎡", "label": "Integrated Production Base" },
+      { "value": "100%", "label": "Precision-Tested Guarantee" }
     ],
     "features": {
       "title": "Why Partner With Us?",
@@ -140,24 +137,24 @@
     "phone": "+86 19743003775  +86 13066010625",
     "address": "Room 2213, Building C , Rongsheng Times International Plaza,Licheng District, Jinan City, Shandong ,China"
   },
-  "seo":{
-    "index":{
-        "title": "老爹模板 - 首页",
-        "description": "老爹模板为外贸企业提供免费模板,帮助他们快速启动业务,提高效率。",
-        "ogImage": "/default-og.jpg",
-        "twitterCard": "summary_large_image"
+  "seo": {
+    "index": {
+      "title": "Jinan Hecoth | 17 Years Expert in Agricultural Machinery",
+      "description": "Leading exporter of tractors, disc harrows, plows, and irrigation systems. 17+ years experience serving 50+ countries.",
+      "ogImage": "/img/logo2.png",
+      "twitterCard": "summary_large_image"
     },
-    "about":{
-        "title": "老爹模板 - 关于我们",
-        "description": "老爹模板为外贸企业提供免费模板,帮助他们快速启动业务,提高效率。",
-        "ogImage": "/default-og.jpg",
-        "twitterCard": "summary_large_image"
+    "about": {
+      "title": "About Us | Jinan Hecoth International Trading",
+      "description": "Learn about Hecoth's history, our 10,000㎡ production base, and why we are your trusted farm machinery partner.",
+      "ogImage": "/img/logo2.png",
+      "twitterCard": "summary_large_image"
     },
-    "contact":{
-        "title": "老爹模板 - 联系我们",
-        "description": "老爹模板为外贸企业提供免费模板,帮助他们快速启动业务,提高效率。",
-        "ogImage": "/default-og.jpg",
-        "twitterCard": "summary_large_image"
+    "contact": {
+      "title": "Contact Hecoth | Get a Quote for Agri-Machinery",
+      "description": "Get in touch with Jinan Hecoth for professional agricultural solutions and expert sourcing services.",
+      "ogImage": "/img/logo2.png",
+      "twitterCard": "summary_large_image"
     }
   }
 }
