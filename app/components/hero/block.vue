@@ -1,10 +1,12 @@
 <template>
     <section class="hero relative min-h-screen flex items-center justify-center overflow-hidden">
         <!-- Background -->
-        <div class="absolute inset-0 bg-[#001151] z-0">
-            <img src="https://the7.io/fse-corporate/wp-content/uploads/sites/142/2025/08/co-b-l.svg" alt="Background"
-                class="w-full h-full object-cover ">
-        </div>
+        <div class="absolute inset-0 z-0">
+    <!-- 1. 背景大图 -->
+    <img src="/img/hero-bg.jpg" alt="Hecoth Agriculture" class="w-full h-full object-cover">
+    <!-- 2. 深色遮罩层：让背景变暗一点，确保白色的文字看得清 -->
+    <div class="absolute inset-0 bg-black/50"></div>
+</div>
 
         <!-- Content -->
          <ClientOnly>
