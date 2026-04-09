@@ -6,11 +6,11 @@
             : 'bg-transparent py-2'
     ]">
         <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between h-20">
+            <div class="flex items-center justify-between h-24">
                 <!-- Logo Area: 这里的 h-12 md:h-16 是放大 Logo 的关键 -->
                 <div class="transition-all duration-500" :class="isScrolled ? 'scale-95' : 'scale-100'">
                     <NuxtLink to="/" class="flex items-center gap-3 py-4 group">
-                        <div class="flex h-12 md:h-16 items-center justify-center">
+                        <div class="flex h-14 md:h-20 items-center justify-center">
                             <img v-if="siteConfig?.logo?.logoUrl" :src="siteConfig?.logo?.logoUrl" alt="HECOTH Logo"
                                 class="h-full w-auto object-contain filter drop-shadow-md">
                         </div>
@@ -31,13 +31,13 @@
                         </NuxtLink>
 
                         <!-- Dropdown Menu -->
-                        <div v-if="item.hasDropdown" class="absolute top-[100%] left-0 w-48 bg-white/95 backdrop-blur-sm text-slate-800 rounded-xl shadow-2xl py-2 
+                        <div v-if="item.hasDropdown" class="absolute top-[100%] left-0 w-48 bg-slate-900/90 backdrop-blur-md text-white ...">
                            opacity-0 invisible group-hover:opacity-100 group-hover:visible 
                            transition-all duration-300 transform translate-y-4 group-hover:translate-y-1 
                            border border-slate-100/50 z-[200]">
                             <div class="absolute -top-4 left-0 w-full h-4"></div>
                             <NuxtLink v-for="(subItem, subIndex) in item.subItems" :key="subIndex" :to="subItem.href"
-                                class="block px-5 py-3 text-sm hover:bg-blue-50 hover:text-blue-700 transition-colors border-b border-slate-50 last:border-b-0 font-medium">
+                                class="block px-5 py-3 text-sm hover:bg-white/10 hover:text-blue-400 transition-colors border-b border-slate-50 last:border-b-0 font-medium">
                                 {{ subItem.label }}
                             </NuxtLink>
                         </div>
