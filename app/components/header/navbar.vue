@@ -30,19 +30,21 @@
                                 class="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform duration-300" />
                         </NuxtLink>
 
-                        <!-- Dropdown Menu -->
-                        <div v-if="item.hasDropdown" class="absolute top-[100%] left-0 w-48 bg-slate-900/90 backdrop-blur-md text-white ...">
-                           opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                           transition-all duration-300 transform translate-y-4 group-hover:translate-y-1 
-                           border border-slate-100/50 z-[200]">
-                            <div class="absolute -top-4 left-0 w-full h-4"></div>
-                            <NuxtLink v-for="(subItem, subIndex) in item.subItems" :key="subIndex" :to="subItem.href"
-                                class="block px-5 py-3 text-sm hover:bg-white/10 hover:text-blue-400 transition-colors border-b border-slate-50 last:border-b-0 font-medium">
-                                {{ subItem.label }}
-                            </NuxtLink>
-                        </div>
-                    </div>
-                </div>
+                        <!-- Dropdown Menu - 修复了乱码问题 -->
+<div v-if="item.hasDropdown" 
+     class="absolute top-[100%] left-0 w-48 bg-slate-900/95 backdrop-blur-md text-white rounded-xl shadow-2xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:translate-y-1 border border-white/10 z-[200]">
+    
+    <!-- 这里的透明连接层，防止鼠标移向下拉菜单时消失 -->
+    <div class="absolute -top-4 left-0 w-full h-4"></div>
+
+    <NuxtLink v-for="(subItem, subIndex) in item.subItems" 
+              :key="subIndex" 
+              :to="subItem.href"
+              class="block px-5 py-3 text-sm hover:bg-white/10 hover:text-blue-400 transition-colors border-b border-white/5 last:border-b-0 font-medium">
+        {{ subItem.label }}
+    </NuxtLink>
+</div>
+
 
                 <!-- Desktop CTA Button -->
                 <div class="hidden md:flex items-center">
