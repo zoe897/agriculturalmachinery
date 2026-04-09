@@ -12,3 +12,7 @@
 }
 
 /* 2. 定义字体文件 (注意路径和后缀必须对应) */
+/* 让所有 logo 自动带上轻微的深色阴影，防止在亮色背景下看不清 */
+img[src*="logo-white"] {
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+}
