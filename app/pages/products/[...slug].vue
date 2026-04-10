@@ -1,42 +1,70 @@
 <script setup lang="ts">
 const route = useRoute()
 
-// 1. 处理路径：转小写，去掉末尾斜杠
-const cleanPath = route.path.replace(/\/$/, '').toLowerCase()
+// 1. 基础路径处理
+const rawPath = route.path.replace(/\/$/, '') // 原始路径（带 /products）
+const lowerPath = rawPath.toLowerCase()        // 全小写路径
+const slugOnly = route.params.slug ? `/${Array.isArray(route.params.slug) ? route.params.slug.join('/') : route.params.slug}` : ''
 
-// 2. 查询数据
-// 注意：key 必须唯一，否则不同产品间切换会显示旧数据
-const { data: product, pending } = await useAsyncData(`prod-${cleanPath}`, () => {
-  return queryCollection('products')
-    .path(cleanPath)
-    .first()
+// 2. 多重兜底查询
+const { data: product, pending } = await useAsyncData(`prod-${lowerPath}`, async () => {
+  // 策略 A: 尝试全小写完整路径 (最常用: /products/tractor)
+  let res = await queryCollection('products').path(lowerPath).first()
+  
+  // 策略 B: 如果 A 失败，尝试原始大小写路径 (防止文件名是大写的: /products/Tractor)
+  if (!res) {
+    res = await queryCollection('products').path(rawPath).first()
+  }
+  
+  // 策略 C: 如果 B 失败，尝试不带前缀的 slug (部分配置下会变成: /tractor)
+  if (!res && slugOnly) {
+    res = await queryCollection('products').path(slugOnly).first()
+    if (!res) res = await queryCollection('products').path(slugOnly.toLowerCase()).first()
+  }
+
+  return res
 })
 
-// 3. 调试数据：建议使用 watch，这样当数据从 null 变成有值时，你会立即在控制台看到
-watch(product, (newVal) => {
-  console.log('--- 调试信息 ---')
-  console.log('当前查询路径:', cleanPath)
-  console.log('获取到的数据:', newVal)
-}, { immediate: true })
-
-// 4. 设置 SEO
+// 3. SEO
 useSeoMeta({
   title: () => product.value?.title || 'Product Details',
-  description: () => product.value?.description || 'Loading...'
+  description: () => product.value?.description || 'Agricultural Machinery'
 })
 </script>
 
 <template>
-  <div class="product-detail">
-    <!-- 增加一个简单的判断，方便在页面上直接调试 -->
-    <div v-if="pending">加载中...</div>
+  <main class="max-w-7xl mx-auto px-4 py-10">
+    <div v-if="pending" class="text-center">加载中...</div>
+    
     <div v-else-if="product">
-      <h1>{{ product.title }}</h1>
-      <ContentRenderer :value="product" />
+      <!-- 面包屑或返回链接 -->
+      <NuxtLink to="/products" class="text-green-600 mb-4 inline-block">← 返回产品列表</NuxtLink>
+      
+      <article class="prose lg:prose-xl mx-auto">
+        <h1>{{ product.title }}</h1>
+        <!-- Nuxt Content v3 渲染组件 -->
+        <ContentRenderer :value="product" />
+      </article>
     </div>
-    <div v-else class="error">
-      <p>未找到路径为 {{ cleanPath }} 的产品内容。</p>
-      <p>请检查 content/products/ 目录下是否存在对应的 .md 文件。</p>
+
+    <!-- 调试诊断面板：仅当找不到数据时显示 -->
+    <div v-else class="bg-red-50 border-2 border-red-200 p-6 rounded-lg">
+      <h2 class="text-red-600 font-bold text-xl mb-4">内容抓取失败诊断</h2>
+      <div class="space-y-2 text-sm font-mono bg-white p-4 rounded border">
+        <p><strong>URL 路径:</strong> {{ route.path }}</p>
+        <p><strong>尝试过的路径 1 (小写):</strong> {{ lowerPath }}</p>
+        <p><strong>尝试过的路径 2 (原始):</strong> {{ rawPath }}</p>
+        <p><strong>尝试过的路径 3 (纯Slug):</strong> {{ slugOnly }}</p>
+      </div>
+      
+      <div class="mt-6">
+        <h3 class="font-bold">排查清单：</h3>
+        <ul class="list-disc ml-5 mt-2 text-gray-700">
+          <li>检查 GitHub 上的文件：<code>content/products/tractor.md</code> 是否存在？</li>
+          <li>检查文件开头是否有 <code>---</code> 分隔的 Frontmatter？</li>
+          <li>尝试将文件名统一改为全小写。</li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </main>
 </template>
