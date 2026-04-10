@@ -1,43 +1,47 @@
 <script setup lang="ts">
 const route = useRoute()
-
-// 1. 获取清洗后的路径（全小写，去掉末尾斜杠）
 const cleanPath = route.path.replace(/\/$/, '').toLowerCase()
 
-const { data: product, pending } = await useAsyncData(`content-${cleanPath}`, async () => {
-  // 策略 A: 尝试 /products/tractor
-  let res = await queryCollection('products').path(cleanPath).first()
-  
-  // 策略 B: 尝试 /products/tractor/index (有些版本会这样解析)
-  if (!res) {
-    res = await queryCollection('products').path(`${cleanPath}/index`).first()
-  }
-
-  return res
+// 1. 同时查询目标文件和所有文件清单（用于诊断）
+const { data: result, pending } = await useAsyncData(`diag-${cleanPath}`, async () => {
+  const [product, all] = await Promise.all([
+    queryCollection('products').path(cleanPath).first(),
+    queryCollection('products').all() // 获取所有已扫描的文件
+  ])
+  return { product, all }
 })
+
+const product = computed(() => result.value?.product)
+const allPaths = computed(() => result.value?.all?.map(i => i.path) || [])
 </script>
 
 <template>
-  <div class="product-page">
-    <div v-if="pending" class="p-10 text-center">Loading...</div>
-
+  <main class="p-8">
+    <div v-if="pending">Loading...</div>
+    
     <div v-else-if="product">
-      <article class="prose max-w-4xl mx-auto p-6">
-        <h1>{{ product.title }}</h1>
-        <!-- 渲染内容 -->
-        <ContentRenderer :value="product" />
-      </article>
+      <h1>{{ product.title }}</h1>
+      <ContentRenderer :value="product" />
     </div>
 
-    <!-- 如果失败，显示的诊断信息 -->
-    <div v-else class="m-10 p-6 bg-red-50 border border-red-200 rounded">
-      <h2 class="text-red-600 font-bold">内容未找到</h2>
-      <p class="text-sm mt-2">尝试查询的路径: <strong>{{ cleanPath }}</strong></p>
-      <hr class="my-4" />
-      <p class="text-xs text-gray-500">
-        提示：请检查 GitHub 仓库根目录下的 <code>content/products/tractor/index.md</code> 是否存在，
-        且文件开头是否有 <code>---</code> 包围的元数据。
-      </p>
+    <!-- 调试诊断区域 -->
+    <div v-else class="bg-gray-100 p-6 border-2 border-dashed border-red-400">
+      <h2 class="text-red-600 font-bold mb-2">🚨 诊断报告</h2>
+      <p>当前访问路径: <code>{{ cleanPath }}</code></p>
+      
+      <div class="mt-4">
+        <p class="font-bold">目前数据库中存在的所有路径 ({{ allPaths.length }} 个):</p>
+        <ul v-if="allPaths.length > 0" class="list-disc ml-5 bg-white p-2">
+          <li v-for="p in allPaths" :key="p"><code>{{ p }}</code></li>
+        </ul>
+        <p v-else class="text-red-500 italic">数据库竟然是空的！Nuxt 完全没看到你的 content 文件夹。</p>
+      </div>
+      
+      <div class="mt-4 text-sm text-gray-600">
+        <strong>建议检查：</strong>
+        <p>1. 你的 content 文件夹是否在项目的【最顶层】根目录（与 package.json 同级）？</p>
+        <p>2. Vercel 部署日志里是否有 Content 相关的 Error？</p>
+      </div>
     </div>
-  </div>
+  </main>
 </template>
