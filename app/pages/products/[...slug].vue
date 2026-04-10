@@ -1,46 +1,23 @@
-<template>
-  <main class="min-h-screen bg-white py-12">
-    <div v-if="pending" class="flex justify-center py-20">
-      <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-green-600"></div>
-    </div>
-
-    <div v-else-if="product" class="max-w-7xl mx-auto px-4">
-      <!-- 这里放你之前的详情页 UI 代码 -->
-      <h1 class="text-3xl font-bold">{{ product.title }}</h1>
-      <ContentRenderer :value="product" class="prose max-w-none mt-8" />
-    </div>
-
-    <div v-else class="text-center py-20">
-      <h2 class="text-2xl font-bold text-gray-900">Product Not Found</h2>
-      <NuxtLink to="/products" class="text-green-600 hover:underline mt-4 inline-block">
-        Back to Products
-      </NuxtLink>
-    </div>
-  </main>
-</template>
-
 <script setup lang="ts">
 const route = useRoute()
 
-// 1. 获取路径并处理
-// 例如：/products/implement/harvesting/potato-harvester
-// path 此时就是完整路径
-const cleanPath = route.path.replace(/\/$/, '')
+// 1. 统一处理路径：转小写，并去掉末尾斜杠
+// 这样无论用户访问 /Tractor 还是 /tractor，我们都去查同一个文件
+const cleanPath = route.path.replace(/\/$/, '').toLowerCase()
 
-// 2. 使用 Nuxt Content v3 查询数据
-const { data: product, pending } = await useAsyncData(`product-${cleanPath}`, () => {
+const { data: product, pending, error } = await useAsyncData(`prod-${cleanPath}`, () => {
   return queryCollection('products')
-    .path(cleanPath)
+    .path(cleanPath) // 关键：确保此路径与 .md 文件的实际路径一致
     .first()
 })
 
-// 3. 设置 SEO Meta
-watchEffect(() => {
-  if (product.value) {
-    useSeoMeta({
-      title: `${product.value.title} - Agricultural Machinery`,
-      description: product.value.description
-    })
-  }
+// 调试用：如果页面还是空的，可以在浏览器控制台看这个打印
+console.log('Searching for path:', cleanPath)
+console.log('Result:', product.value)
+
+// 设置 SEO
+useSeoMeta({
+  title: () => product.value?.title || 'Product Details',
+  description: () => product.value?.description
 })
 </script>
