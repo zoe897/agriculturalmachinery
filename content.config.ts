@@ -5,7 +5,8 @@ export default defineContentConfig({
   collections: {
     products: defineCollection({
       type: 'page',
-      source: 'products/**/*.md' // 必须明确指定
+      // 建议去掉末尾的 .md，使用目录匹配模式
+      source: 'products/**' 
     })
   }
 })
