@@ -49,7 +49,8 @@ watch(() => route.path, () => refresh())
           >
             <div class="aspect-[4/3] bg-gray-50 overflow-hidden">
               <img 
-                :src="item.image || '/img/placeholder.png'" 
+                v-if="item.image"
+                :src="item.image" 
                 :alt="item.title"
                 class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700"
               />
@@ -83,7 +84,6 @@ watch(() => route.path, () => refresh())
               :alt="result.page.title"
               class="w-full h-full object-contain p-6" 
             />
-            <img v-else src="/img/placeholder.png" class="w-full h-full object-contain p-6" />
           </div>
 
           <div class="flex flex-col justify-center">
@@ -106,17 +106,11 @@ watch(() => route.path, () => refresh())
           </article>
         </div>
       </div>
-
-      <div v-else class="text-center py-20">
-        <h2 class="text-2xl font-bold text-gray-400 mb-4">Product Content Not Found</h2>
-        <NuxtLink to="/products" class="text-orange-600 font-bold underline">Back to Catalog</NuxtLink>
-      </div>
     </div>
   </main>
 </template>
 
 <style scoped>
-/* 深度美化 Markdown 里的表格、图片和文字 */
 .prose :deep(table) { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.95em; }
 .prose :deep(th) { background-color: #f9fafb; padding: 16px; border: 1px solid #e5e7eb; text-align: left; }
 .prose :deep(td) { padding: 16px; border: 1px solid #e5e7eb; }
