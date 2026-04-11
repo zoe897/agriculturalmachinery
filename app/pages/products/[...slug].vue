@@ -1,74 +1,75 @@
 <script setup lang="ts">
 const route = useRoute()
 
-// 1. 获取所有可能的路径变体
-const getTries = (p: string) => {
-  const clean = p.replace(/\/$/, '')
-  return [
-    clean, 
-    clean.toLowerCase(), 
-    clean.charAt(0).toUpperCase() + clean.slice(1),
-    `${clean}/index`,
-    `${clean.toLowerCase()}/index`
-  ]
-}
-
-const { data: product, pending, refresh } = await useAsyncData(`prod-${route.path}`, async () => {
-  const tries = getTries(route.path)
-  
-  // 核心修正：利用 LIKE 运算符忽略大小写查找
-  // 这能解决 Tractor 还是 tractor 的问题
-  const lastSegment = route.path.split('/').filter(Boolean).pop()
-  
-  // 优先精确查找
-  for (const t of tries) {
-    const doc = await queryCollection('products').path(t).first()
-    if (doc) return doc
-  }
-
-  // 保底：通过标题或路径片段模糊查找
-  if (lastSegment) {
-    return await queryCollection('products')
-      .where('path', 'LIKE', `%${lastSegment.toLowerCase()}%`)
-      .first()
-  }
-  
-  return null
+// 1. 获取当前页面的内容（比如 Tractor 的介绍）
+const { data: page } = await useAsyncData(`page-${route.path}`, () => {
+  return queryCollection('products').path(route.path.replace(/\/$/, '').toLowerCase()).first()
 })
 
-watch(() => route.path, () => refresh())
+// 2. 获取该目录下的所有产品（比如 TTB904, TTE500 等）
+const { data: subProducts } = await useAsyncData(`sub-${route.path}`, () => {
+  const cleanPath = route.path.replace(/\/$/, '').toLowerCase()
+  return queryCollection('products')
+    .where('path', 'LIKE', `${cleanPath}/%`)
+    .where('path', 'NOT LIKE', '%index%') // 排除掉 index 自己
+    .all()
+})
 </script>
 
 <template>
-  <main class="max-w-4xl mx-auto p-6 md:p-12 min-h-[60vh]">
-    <div v-if="pending" class="text-center py-20">
-      <div class="animate-spin inline-block w-8 h-8 border-4 border-orange-500 border-t-transparent rounded-full"></div>
-    </div>
-
-    <div v-else-if="product">
-      <nav class="mb-8 text-sm flex items-center gap-2">
-        <NuxtLink to="/" class="text-gray-500 hover:text-orange-600 transition-colors">Home</NuxtLink>
-        <span class="text-gray-300">/</span>
-        <NuxtLink to="/products" class="text-gray-500 hover:text-orange-600 transition-colors">Products</NuxtLink>
-        <span class="text-gray-300">/</span>
-        <span class="text-gray-900 font-bold">{{ product.title }}</span>
-      </nav>
-
-      <article class="prose prose-orange lg:prose-xl max-w-none bg-white">
-        <h1 class="text-3xl font-extrabold text-gray-900 mb-6 border-b pb-4">
-          {{ product.title }}
-        </h1>
-        <ContentRenderer :value="product" />
+  <main class="max-w-6xl mx-auto p-6 md:p-12">
+    <section v-if="page" class="mb-12 border-b pb-8">
+      <h1 class="text-4xl font-extrabold text-gray-900 mb-4">{{ page.title }}</h1>
+      <article class="prose max-w-none text-gray-600">
+        <ContentRenderer :value="page" />
       </article>
+    </section>
+
+    <div v-if="subProducts && subProducts.length > 0">
+      <h2 class="text-2xl font-bold mb-8">Available Models</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <NuxtLink 
+          v-for="item in subProducts" 
+          :key="item.path"
+          :to="item.path"
+          class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all border border-gray-100"
+        >
+          <div class="aspect-video bg-gray-100 overflow-hidden">
+            <img 
+              :src="item.image || '/images/placeholder-tractor.jpg'" 
+              :alt="item.title"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 group-hover:text-orange-600">{{ item.title }}</h3>
+            <p class="text-gray-500 text-sm mt-2 line-clamp-2">{{ item.description }}</p>
+            <div class="mt-4 text-orange-600 font-semibold flex items-center gap-2">
+              View Specifications <span>→</span>
+            </div>
+          </div>
+        </NuxtLink>
+      </div>
     </div>
 
-    <div v-else class="text-center py-20 bg-gray-50 rounded-3xl border-2 border-dashed border-gray-200">
-      <div class="text-6-xl mb-4">🚜</div>
-      <h2 class="text-2xl font-bold text-gray-800 mb-2">Specifications Not Loaded</h2>
-      <p class="text-gray-500 mb-8">We are synchronizing the data for: <span class="font-mono text-orange-600">{{ route.path }}</span></p>
-      <NuxtLink to="/products" class="bg-orange-600 text-white px-8 py-3 rounded-full font-bold hover:bg-orange-700 transition-all shadow-lg">
-        View All Machinery
-      </NuxtLink>
-    </div>
+    <div v-if="!subProducts || subProducts.length === 0" class="mt-8">
+       </div>
   </main>
 </template>
+<div v-if="!subProducts || subProducts.length === 0" class="mt-8">
+  <article class="prose prose-orange lg:prose-xl max-w-none bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+    <ContentRenderer :value="product" />
+  </article>
+
+  <div class="mt-12 p-10 bg-gradient-to-br from-blue-900 to-blue-800 text-white rounded-3xl shadow-xl">
+    <div class="md:flex items-center justify-between">
+      <div>
+        <h3 class="text-3xl font-bold mb-2">Request Technical Specs</h3>
+        <p class="text-blue-100">Contact Zoe for the latest FOB prices and container loading plans.</p>
+      </div>
+      <a href="mailto:zoe@annetop.com" class="mt-6 md:mt-0 inline-block bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-full font-bold text-lg transition-transform hover:scale-105">
+        Get a Quote Now
+      </a>
+    </div>
+  </div>
+</div>

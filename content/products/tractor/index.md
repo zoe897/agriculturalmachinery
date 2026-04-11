@@ -1,26 +1,15 @@
 ---
-title: High-Performance Agricultural Tractors
-description: Reliable and powerful tractors for modern farming, available for global export.
-image: /images/tractor-main.jpg
+title: "Agricultural Tractors"
+description: "Professional farming solutions from 35HP to 220HP."
 ---
 
-# Agricultural Tractors
+# High-Performance Agricultural Tractors
 
-Welcome to our tractor collection. We provide a wide range of tractors from **35HP to 220HP**, designed to meet various farming needs.
+Welcome to the **HECOTH** tractor collection. As a dedicated supply chain integrator, we have selected these models based on 16 years of experience in the agricultural machinery industry. 
 
-## Why Choose Our Tractors?
+Our tractors are designed for:
+* **Durability:** Heavy-duty chassis for tough soil conditions.
+* **Efficiency:** Powerful engines with low fuel consumption.
+* **Flexibility:** Various attachments and configurations available.
 
-* **Powerful Engines:** High torque and fuel efficiency.
-* **Flexible Configuration:** Options for cabin, ROPS, and multi-way valves.
-* **Global Warranty:** Reliable after-sales support and spare parts availability.
-
-## Hot Selling Models
-
-Here are some of our popular models you can check:
-
-1.  **[TTB904 Series](/products/tractor/ttb904)** - Best for heavy-duty tillage.
-2.  **[TTE500 Series](/products/tractor/tte500)** - Perfect for medium-sized orchards.
-3.  **[TTS350 Series](/products/tractor/tts350)** - Compact and versatile.
-
----
-*Contact Zoe at zoe@annetop.com for a detailed quotation.*
+**Browse our flagship models below:**
