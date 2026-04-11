@@ -97,3 +97,31 @@ watch(() => route.path, () => refresh())
 .prose th { @apply bg-gray-50 p-4 border border-gray-200 text-left font-bold; }
 .prose td { @apply p-4 border border-gray-100; }
 </style>
+<style>
+/* 关键：必须加入下面这一行，否则 Tailwind v4 编译会报错 */
+@reference "tailwindcss";
+
+/* 详情页样式优化 */
+.prose img {
+  /* 使用 @apply 时，确保类名存在 */
+  @apply rounded-3xl shadow-2xl my-10;
+  width: 100% !important;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prose table {
+  @apply w-full my-8 border-collapse;
+  display: block;
+  overflow-x: auto;
+}
+
+.prose th { 
+  @apply bg-gray-50 p-4 border border-gray-200 text-left font-bold; 
+}
+
+.prose td { 
+  @apply p-4 border border-gray-100; 
+}
+</style>
