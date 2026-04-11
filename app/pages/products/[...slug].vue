@@ -1,73 +1,99 @@
 <script setup lang="ts">
 const route = useRoute()
 
-// 1. 格式化路径：转小写，去掉末尾斜杠
+// 1. 格式化路径
 const cleanPath = route.path.replace(/\/$/, '').toLowerCase()
 
-// 2. 一次性获取数据和所有路径清单（用于诊断）
-const { data: result, pending } = await useAsyncData(`diag-${cleanPath}`, async () => {
-  // 尝试 策略 A (直接路径) 和 策略 B (带 index 路径)
+// 2. 获取数据：当前产品、同目录下的其他产品（用于列表）
+const { data: result, pending } = await useAsyncData(`content-${cleanPath}`, async () => {
+  // 查找当前页面内容
   let product = await queryCollection('products').path(cleanPath).first()
-  
   if (!product) {
     product = await queryCollection('products').path(`${cleanPath}/index`).first()
   }
 
-  // 获取所有文件清单，帮我们排查“数据库是否为空”
+  // 获取数据库所有路径（用于诊断）
   const all = await queryCollection('products').all()
-  
-  return { product, all }
+
+  // 进阶：如果你在分类页（比如 /products/tractor），自动找该目录下所有型号
+  // 如果你在详情页（比如 /products/tractor/ttb904），找它的兄弟产品
+  const parentPath = cleanPath.split('/').slice(0, -1).join('/')
+  const related = await queryCollection('products')
+    .where('path', 'LIKE', `${cleanPath}%`) 
+    .all()
+
+  return { product, all, related }
 })
 
-// 计算属性：简化模板引用
 const product = computed(() => result.value?.product)
 const allPaths = computed(() => result.value?.all?.map(i => i.path) || [])
+
+// 排除掉当前的 index 页面，剩下的就是具体的型号列表
+const subModels = computed(() => {
+  return result.value?.related?.filter(item => item.path !== cleanPath && item.path !== `${cleanPath}/index`) || []
+})
 </script>
 
 <template>
-  <main class="max-w-4xl mx-auto p-8">
-    <!-- 加载状态 -->
-    <div v-if="pending" class="text-center py-10">
-      <div class="animate-spin inline-block w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full"></div>
-      <p class="mt-2 text-gray-500">正在检索拖拉机数据...</p>
+  <main class="max-w-4xl mx-auto p-6 md:p-12">
+    <div v-if="pending" class="text-center py-20">
+      <div class="animate-spin inline-block w-10 h-10 border-4 border-orange-500 border-t-transparent rounded-full"></div>
+      <p class="mt-4 text-gray-500 font-medium">Loading technical specifications...</p>
     </div>
     
-    <!-- 成功渲染内容 -->
-    <div v-else-if="product" class="prose lg:prose-xl mx-auto">
-      <h1>{{ product.title }}</h1>
-      <ContentRenderer :value="product" />
-    </div>
+    <div v-else-if="product">
+      <nav class="mb-8 text-sm text-gray-500">
+        <NuxtLink to="/" class="hover:text-orange-600">Home</NuxtLink>
+        <span class="mx-2">/</span>
+        <NuxtLink to="/products/tractor" class="hover:text-orange-600">Products</NuxtLink>
+        <span v-if="cleanPath !== '/products/tractor'" class="mx-2">/</span>
+        <span class="text-gray-900 font-bold">{{ product.title }}</span>
+      </nav>
 
-    <!-- 🚨 诊断报告 (仅在找不到内容时显示) -->
-    <div v-else class="bg-red-50 p-6 border-2 border-dashed border-red-400 rounded-lg">
-      <h2 class="text-red-600 font-bold mb-2 text-xl">🚨 内容未找到</h2>
-      <p class="mb-4">我们尝试在数据库中查找路径：<code>{{ cleanPath }}</code></p>
-      
-      <div class="mt-4 p-4 bg-white rounded border border-red-200">
-        <p class="font-bold text-gray-700 mb-2">
-          目前数据库中已识别的路径 (共 {{ allPaths.length }} 个):
-        </p>
+      <article class="prose prose-orange lg:prose-xl max-w-none">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">
+          {{ product.title }}
+        </h1>
         
-        <ul v-if="allPaths.length > 0" class="space-y-1">
-          <li v-for="p in allPaths" :key="p" class="text-sm font-mono text-blue-600 bg-blue-50 px-2 py-1 rounded">
-            {{ p }}
-          </li>
-        </ul>
-        
-        <div v-else class="text-red-500 flex items-center gap-2 py-4">
-          <span>❌</span>
-          <p class="font-bold">数据库竟然是空的！Nuxt Content 没有扫描到任何文件。</p>
+        <ContentRenderer :value="product" />
+      </article>
+
+      <div v-if="subModels.length > 0" class="mt-16 pt-8 border-t border-gray-200">
+        <h3 class="text-xl font-bold mb-6 text-gray-800">Related Models & Series</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <NuxtLink 
+            v-for="model in subModels" 
+            :key="model.path"
+            :to="model.path"
+            class="p-4 border border-gray-100 rounded-lg hover:border-orange-500 hover:shadow-md transition-all group"
+          >
+            <div class="font-bold text-gray-900 group-hover:text-orange-600">{{ model.title }}</div>
+            <div class="text-sm text-gray-500 line-clamp-1">{{ model.description }}</div>
+          </NuxtLink>
         </div>
       </div>
-      
-      <div class="mt-6 text-sm text-gray-600 border-t pt-4">
-        <p class="font-bold mb-1">接下来的排查建议：</p>
-        <ol class="list-decimal ml-5 space-y-1">
-          <li>确认 <code>content/products/tractor/index.md</code> 文件确实在 GitHub 根目录。</li>
-          <li>确认 <code>content.config.ts</code> 里的 <code>source</code> 设置为了 <code>'**/*.md'</code>。</li>
-          <li>等 Vercel 配额恢复后，重新部署并点击 "Reset Cache"。</li>
-        </ol>
+    </div>
+
+    <div v-else class="bg-red-50 p-6 border-2 border-dashed border-red-400 rounded-lg">
+      <h2 class="text-red-600 font-bold mb-2">🚨 Path Not Found</h2>
+      <p>Current Path: <code>{{ cleanPath }}</code></p>
+      <div class="mt-4 p-4 bg-white rounded text-xs font-mono">
+        <p class="font-bold mb-2">Available Database Paths:</p>
+        <div v-for="p in allPaths" :key="p">{{ p }}</div>
       </div>
     </div>
   </main>
 </template>
+
+<style>
+/* 让 Markdown 里的表格更好看 */
+.prose table {
+  @apply w-full border-collapse border border-gray-200 text-sm;
+}
+.prose th, .prose td {
+  @apply border border-gray-200 p-2 text-left;
+}
+.prose th {
+  @apply bg-gray-50;
+}
+</style>

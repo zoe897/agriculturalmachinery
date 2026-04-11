@@ -1,5 +1,4 @@
 ---
----
 title: High-Performance Agricultural Tractors
 description: Reliable and powerful tractors for modern farming, available for global export.
 image: /images/tractor-main.jpg
