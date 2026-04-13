@@ -1,7 +1,7 @@
 ---
 title: "Tillage Machinery | Disc Harrows & Ploughs"
 description: "Professional soil preparation solutions. Discover our full range of disc harrows, ploughs, and cultivators for optimal seedbed preparation."
-image: "/img/category/tillage-main.png"
+image: "/img/harrow/1bz-heavy.jpg"
 ---
 
 # Tillage & Soil Preparation Equipment
