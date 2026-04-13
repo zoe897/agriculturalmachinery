@@ -28,3 +28,129 @@ header a, nav a {
     color: white ;
     text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
 }
+/* 确保在 #main.css 中添加 */
+.prose {
+  color: #374151; /* 这种灰色比纯黑更大气 */
+  max-width: none;
+}
+
+.prose h2 {
+  font-weight: 800;
+  font-size: 2.25rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+
+/* 处理 Markdown 图片不居中的问题 */
+.prose img {
+  border-radius: 1.5rem;
+  margin: 2rem auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}/* --- 农业机械产品页面专属增强 --- */
+
+/* 1. 全局 prose (Markdown) 文字美化 */
+.prose {
+    color: #374151;
+    max-width: none;
+    line-height: 1.8;
+}
+
+.prose h1, .prose h2, .prose h3 {
+    color: #111827;
+    font-weight: 800;
+}
+
+.prose h2 {
+    font-size: 2.25rem;
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #f3f4f6;
+    padding-bottom: 0.75rem;
+}
+
+/* 2. 大气的参数表格渲染 */
+:deep(table), table {
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    margin: 2.5rem 0 !important;
+    border-radius: 1.25rem !important;
+    overflow: hidden !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
+}
+
+:deep(th), th {
+    background-color: #f9fafb !important;
+    color: #111827 !important;
+    padding: 1.25rem 1rem !important;
+    text-align: left !important;
+    font-weight: 800 !important;
+    border-bottom: 2px solid #ea580c !important; /* 橙色强调线 */
+}
+
+:deep(td), td {
+    padding: 1.25rem 1rem !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+    background: white !important;
+    font-size: 1rem !important;
+}
+
+:deep(tr:last-child td), tr:last-child td {
+    border-bottom: none !important;
+}
+
+:deep(tr:hover td), tr:hover td {
+    background-color: #fffaf8 !important; /* 鼠标悬停变淡橙色 */
+}
+
+/* 3. 视频容器美化 (16:9) */
+.video-container, :deep(.video-container) {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin: 3rem 0;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
+}
+
+.video-container iframe, :deep(.video-container iframe) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+}
+
+/* 4. 核心优势卡片美化 (配合 Markdown 里的 HTML) */
+.feature-grid, :deep(.feature-grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.feature-card, :deep(.feature-card) {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    border: 1px solid #f3f4f6;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover, :deep(.feature-card:hover) {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+    border-color: #ea580c;
+}
+
+.feature-card h3, :deep(.feature-card h3) {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #ea580c; /* 标题使用品牌橙色 */
+}
