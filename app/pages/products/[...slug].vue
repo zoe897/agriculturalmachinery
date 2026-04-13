@@ -78,14 +78,14 @@ watch(() => route.path, () => refresh())
 </template>
 
 <style scoped>
-/* 强制美化渲染出来的 HTML */
+/* 1. 基础文字排版修复 */
 .prose-product :deep(h2) {
   font-size: 1.8rem;
   font-weight: 800;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
   color: #111827;
-  border-left: 5px solid #ea580c;
+  border-left: 5px solid #ea580c; /* 橙色左边框 */
   padding-left: 1rem;
 }
 
@@ -96,19 +96,65 @@ watch(() => route.path, () => refresh())
   margin-bottom: 1.5rem;
 }
 
-/* 强制表格样式 */
+/* 2. 导语样式 (对应 Markdown 里的 lead-text 类) */
+.prose-product :deep(.lead-text) {
+  font-size: 1.25rem;
+  color: #6b7280;
+  font-style: italic;
+  margin-bottom: 2.5rem;
+  border-left: 4px solid #10b981; /* 绿色左边框 */
+  padding-left: 1.5rem;
+  line-height: 1.8;
+}
+
+/* 3. 核心优势卡片布局 (feature-grid & feature-card) */
+.prose-product :deep(.feature-grid) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.prose-product :deep(.feature-card) {
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  background: linear-gradient(145deg, #ffffff, #f9fafb);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.prose-product :deep(.feature-card:hover) {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.prose-product :deep(.feature-card h3) {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  border-left: none; /* 移除卡片内标题的边框 */
+  padding-left: 0;
+}
+
+/* 4. 强制表格样式 (确保机械参数清晰) */
 .prose-product :deep(table) {
   width: 100% !important;
   border-collapse: collapse !important;
   margin: 2rem 0 !important;
   border: 1px solid #e5e7eb !important;
+  border-radius: 0.75rem !important;
+  overflow: hidden !important;
 }
 
 .prose-product :deep(th) {
-  background-color: #1f2937 !important;
+  background-color: #1f2937 !important; /* 深灰色表头 */
   color: white !important;
   padding: 1rem !important;
   text-align: left !important;
+  font-weight: 700 !important;
 }
 
 .prose-product :deep(td) {
@@ -117,7 +163,7 @@ watch(() => route.path, () => refresh())
   background-color: white !important;
 }
 
-/* 强制图片样式 */
+/* 5. 图片美化 */
 .prose-product :deep(img) {
   max-width: 100% !important;
   height: auto !important;
@@ -126,10 +172,22 @@ watch(() => route.path, () => refresh())
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* 强制视频适配 */
-.prose-product :deep(.aspect-video iframe) {
-  width: 100% !important;
-  aspect-ratio: 16 / 9 !important;
-  border-radius: 1rem !important;
+/* 6. 视频容器 (保持 16:9 比例) */
+.prose-product :deep(.video-container) {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 比例 */
+  margin: 2.5rem 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.prose-product :deep(.video-container iframe) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>
