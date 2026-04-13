@@ -20,95 +20,116 @@ const contactMailto = computed(() => {
   return `mailto:zoe@annetop.com?subject=Inquiry for ${encodeURIComponent(title)}&body=Dear Zoe, I am interested in ${encodeURIComponent(title)}...`
 })
 
-// 图片加载失败的保底处理
-const handleImageError = (e: Event) => {
-  const target = e.target as HTMLImageElement
-  target.style.display = 'none' // 隐藏破碎的图片
-}
-
 watch(() => route.path, () => refresh())
 </script>
 
 <template>
-  <div class="bg-white min-h-screen pt-[60px]"> <div v-if="result">
-      
-      <section class="relative h-[45vh] min-h-[350px] w-full bg-[#001151] overflow-hidden flex items-end">
-        <div class="absolute inset-0 bg-gradient-to-br from-[#001151] via-[#0b2b8a] to-green-900 opacity-90"></div>
-        
+  <div class="bg-white min-h-screen">
+    <div v-if="result">
+      <section class="relative h-[40vh] w-full bg-[#001151] overflow-hidden flex items-end">
+        <div class="absolute inset-0 bg-gradient-to-br from-[#001151] to-green-900 opacity-90"></div>
         <img 
           v-if="result.page?.image"
           :src="result.page.image" 
-          class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50 transition-opacity duration-1000"
-          @error="handleImageError"
+          class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50"
         />
-
-        <div class="relative max-w-7xl mx-auto w-full px-6 pb-12">
-          <nav class="flex mb-4 text-xs font-bold uppercase tracking-widest text-green-400">
-            <NuxtLink to="/" class="hover:text-white transition">Home</NuxtLink>
-            <span class="mx-2 text-white/30">/</span>
-            <NuxtLink to="/products" class="hover:text-white transition">Products</NuxtLink>
-          </nav>
-          <h1 class="text-4xl md:text-6xl font-black text-white mb-4 drop-shadow-2xl">
-            {{ result.page?.title }}
-          </h1>
-          <p class="text-lg md:text-xl text-white/80 max-w-3xl font-medium leading-relaxed">
-            {{ result.page?.description }}
-          </p>
+        <div class="relative max-w-7xl mx-auto w-full px-6 pb-10">
+          <h1 class="text-4xl md:text-5xl font-black text-white mb-2">{{ result.page?.title }}</h1>
+          <p class="text-white/70 max-w-2xl">{{ result.page?.description }}</p>
         </div>
       </section>
 
-      <div class="max-w-7xl mx-auto px-6 py-16">
-        <div v-if="result.subProducts.length === 0 && result.page">
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
-            <div class="lg:col-span-2">
-              <article class="prose prose-orange prose-xl max-w-none">
-                <ContentRenderer :value="result.page" />
-              </article>
-            </div>
-            <div class="lg:col-span-1">
-              <div class="sticky top-28 bg-gray-50 p-8 rounded-[2rem] border border-gray-100 shadow-xl shadow-gray-200/50">
-                <div class="w-12 h-1 bg-orange-600 mb-6"></div>
-                <h3 class="text-2xl font-black mb-2 text-gray-900">Factory Quote</h3>
-                <p class="text-gray-500 mb-8 text-sm">Professional integration for agricultural machinery with 16 years experience.</p>
-                <a :href="contactMailto" class="w-full flex items-center justify-center bg-orange-600 text-white text-lg font-bold py-5 rounded-2xl hover:bg-black transition-all duration-300">
-                  Contact Zoe for Price
-                </a>
-                <ul class="mt-8 space-y-3 text-sm text-gray-400 font-medium">
-                  <li class="flex items-center">✅ Global Shipping Support</li>
-                  <li class="flex items-center">✅ LCL Container Consolidation</li>
-                  <li class="flex items-center">✅ Genuine Spare Parts</li>
-                </ul>
+      <div class="max-w-7xl mx-auto px-6 py-12">
+        <div v-if="result.subProducts.length === 0" class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div class="lg:col-span-2">
+            <article class="prose-product">
+              <ContentRenderer :value="result.page" />
+            </article>
+          </div>
+          
+          <div class="lg:col-span-1">
+            <div class="sticky top-24 p-8 bg-gray-50 rounded-3xl border border-gray-100 shadow-sm">
+              <h3 class="text-xl font-bold mb-4">Inquiry Details</h3>
+              <a :href="contactMailto" class="block w-full text-center bg-orange-600 text-white font-bold py-4 rounded-xl hover:bg-black transition">
+                Contact Zoe for Price
+              </a>
+              <div class="mt-6 text-sm text-gray-400 space-y-2">
+                <p>✓ 16 Years Experience</p>
+                <p>✓ LCL Container Support</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div v-else>
-          <article v-if="result.page" class="prose prose-orange prose-lg max-w-none mb-20">
-            <ContentRenderer :value="result.page" />
-          </article>
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            <NuxtLink 
-              v-for="item in result.subProducts" 
-              :key="item.path"
-              :to="item.path"
-              class="group relative bg-white rounded-3xl overflow-hidden border border-gray-100 hover:border-orange-500 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
-            >
-              <div class="aspect-[4/3] overflow-hidden bg-gray-50">
-                <img :src="item.image" class="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-700" />
-              </div>
-              <div class="p-8">
-                <h4 class="text-2xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">{{ item.title }}</h4>
-                <p class="text-gray-500 mt-3 line-clamp-2">{{ item.description }}</p>
-                <div class="mt-8 flex items-center text-orange-600 font-bold uppercase tracking-wider text-sm">
-                  View Details <span class="ml-2 group-hover:ml-4 transition-all">→</span>
-                </div>
-              </div>
-            </NuxtLink>
-          </div>
+        <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <NuxtLink v-for="item in result.subProducts" :key="item.path" :to="item.path" class="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition">
+            <div class="aspect-square bg-gray-50 p-4">
+              <img :src="item.image" class="w-full h-full object-contain group-hover:scale-105 transition duration-500" />
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold text-xl group-hover:text-orange-600">{{ item.title }}</h4>
+              <p class="text-gray-500 text-sm mt-2 line-clamp-2">{{ item.description }}</p>
+            </div>
+          </NuxtLink>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+/* 强制美化渲染出来的 HTML */
+.prose-product :deep(h2) {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #111827;
+  border-left: 5px solid #ea580c;
+  padding-left: 1rem;
+}
+
+.prose-product :deep(p) {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+/* 强制表格样式 */
+.prose-product :deep(table) {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 2rem 0 !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+.prose-product :deep(th) {
+  background-color: #1f2937 !important;
+  color: white !important;
+  padding: 1rem !important;
+  text-align: left !important;
+}
+
+.prose-product :deep(td) {
+  padding: 1rem !important;
+  border: 1px solid #e5e7eb !important;
+  background-color: white !important;
+}
+
+/* 强制图片样式 */
+.prose-product :deep(img) {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 1rem !important;
+  margin: 2rem 0 !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 强制视频适配 */
+.prose-product :deep(.aspect-video iframe) {
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  border-radius: 1rem !important;
+}
+</style>
