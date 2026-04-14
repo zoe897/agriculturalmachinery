@@ -2,7 +2,7 @@
 title: "ZNCRD Series Fertilizer Spreader (600L - 3000L)"
 series: "Precision Nutrient Management"
 description: "Professional fertilizer spreading solutions featuring high-grade stainless steel hoppers and precision distribution discs."
-image: "/img/implement/spreader-main.jpg"
+image: "/img/seed/spreader.jpg"
 category: "Implements/seeding"
 tags: ["Fertilizer Spreader", "Precision Farming", "Soil Health"]
 ---
