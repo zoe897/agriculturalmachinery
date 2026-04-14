@@ -1,12 +1,12 @@
 ---
 title: "Agricultural Tractors | HECOTH Farm Machinery"
 description: "Professional farming solutions from 30HP to 150HP. High-torque engines, reinforced chassis, and global shipping support."
-image: "/img/tractor/P120.png"
+image: "/img/tractor/tractor-banner.jpg"
 ---
 
 # Agricultural Tractor Series
 
-With over **16 years of expertise** in agricultural machinery export, HECOTH provides a complete lineup of tractors optimized for diverse farming conditions—from narrow orchard paths to large-scale grain fields.
+With over **17+ years of expertise** in agricultural machinery export, HECOTH provides a complete lineup of tractors optimized for diverse farming conditions—from narrow orchard paths to large-scale grain fields.
 
 ### Why Partner with HECOTH?
 * **Proven Durability:** Reinforced chassis and 4WD options for high-intensity work.
