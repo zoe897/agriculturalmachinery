@@ -104,7 +104,7 @@ watch(() => route.path, () => refresh())
     </div>
   </div>
 </template>
-<pre class="text-xs text-red-500">{{ result.page?.image }}</pre>
+
 <style scoped>
 /* --- 深度渲染美化 (强制作用于 Markdown 生成的 HTML) --- */
 
