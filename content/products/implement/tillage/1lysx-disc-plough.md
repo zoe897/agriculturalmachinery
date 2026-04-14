@@ -3,7 +3,7 @@ title: "1LY(SX) Series Two-way Disc Plough"
 description: "High-efficiency tillage solution for dry cultivated and fallow land, featuring short idle distance and low oil consumption."
 image: "/img/plough/1lysx.jpg"
 series: "Disc Plough"
-category: "Plough"
+category: "Implement/Tillage"
 tags: ["Two-way Disc Plough", "High Productivity", "Tillage Machinery"]
 ---
 
