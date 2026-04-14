@@ -3,7 +3,7 @@ title: "Middle-Duty Disc Harrow Series | 1BJX & 1BJXS"
 description: "Optimized for secondary tillage and seedbed preparation. Featuring Standard and New Type Mounted Offset designs for 25-140HP tractors."
 image: "/img/harrow/1bjx-main.jpg"
 series: "Middle-Duty Harrow"
-category: "Harrow"
+category: "implement/tillage"
 tags: ["Disc Harrow", "Middle Duty", "1BJX", "1BJXS", "Seedbed Preparation"]
 ---
 
@@ -15,7 +15,7 @@ tags: ["Disc Harrow", "Middle Duty", "1BJX", "1BJXS", "Seedbed Preparation"]
 
 ## 🌟 Professional Performance for Modern Farming
 
-Through 16 years of global export experience, we've refined our middle-duty harrows to address the core needs of international distributors:
+Through 17 years of global export experience, we've refined our middle-duty harrows to address the core needs of international distributors:
 
 <div class="feature-grid">
   <div class="feature-card">
