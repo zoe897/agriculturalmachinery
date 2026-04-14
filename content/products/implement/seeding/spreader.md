@@ -1,16 +1,16 @@
 ---
-title: "ZNBF Series Fertilizer Spreader (600L - 3000L)"
+title: "ZNCRD Series Fertilizer Spreader (600L - 3000L)"
 series: "Precision Nutrient Management"
 description: "Professional fertilizer spreading solutions featuring high-grade stainless steel hoppers and precision distribution discs."
 image: "/img/implement/spreader-main.jpg"
-category: "Implements"
+category: "Implements/seeding"
 tags: ["Fertilizer Spreader", "Precision Farming", "Soil Health"]
 ---
 
 # Professional Fertilizer Spreader Series (ZNBF)
 
 <p class="lead-text">
-  With over 17 years of specialization in agricultural machinery export, we provide a complete range of fertilizer spreaders designed for maximum efficiency, from compact single-plate models to heavy-duty flagship double-plate trailers.
+  With over 17+ years of specialization in agricultural machinery export, we provide a complete range of fertilizer spreaders designed for maximum efficiency, from compact single-plate models to heavy-duty flagship double-plate trailers.
 </p>
 
 ## 🌟 Core Sales Advantages
@@ -34,18 +34,18 @@ tags: ["Fertilizer Spreader", "Precision Farming", "Soil Health"]
 
 | Model | Type | Capacity (L) | Spread Width (m) | Matched Power (HP) | Weight (kg) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **ZNBF-600** | Single Plate | 600 | 6 - 15 | 30 - 60 | 77.2 |
-| **ZNBF-1000** | Single Plate | 1000 | 8 - 16 | 60 - 100 | 140 |
-| **ZNBF-1200T** | Traction | 1200 | 4 - 14 | 30 - 80 | 260 |
-| **ZNBF-1500** | Double Plate | 1500 | 13 - 24 | 90 - 180 | 295 |
-| **ZNBF-3000** | Double Plate | 3000 | 13 - 24 | 90 - 150 | 430 |
+| **ZNCRD-600** | Single Plate | 600 | 6 - 15 | 30 - 60 | 77.2 |
+| **ZNCRD-1000** | Single Plate | 1000 | 8 - 16 | 60 - 100 | 140 |
+| **ZNCRD-1200T** | Traction | 1200 | 4 - 14 | 30 - 80 | 260 |
+| **ZNCRD-1500** | Double Plate | 1500 | 13 - 24 | 90 - 180 | 295 |
+| **ZNCRD-3000** | Double Plate | 3000 | 13 - 24 | 90 - 150 | 430 |
 
 ## 📺 Quality Inspection & Factory Testing
 Reliability is our signature. Every spreader undergoes rigorous PTO transmission and material flow tests to ensure zero-defect delivery to our global partners.
 
 <div class="video-container">
   <iframe 
-    src="https://www.youtube.com/embed/bI2nM748EbY" 
+    src="https://youtube.com/shorts/bI2nM748EbY" 
     title="HECOTH Fertilizer Spreader Field Test"
     frameborder="0" 
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
