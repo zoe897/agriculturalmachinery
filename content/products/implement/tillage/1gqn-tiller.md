@@ -2,7 +2,7 @@
 title: "1GQN Series Rotary Tiller: Heavy-Duty Soil Preparation"
 series: "Primary Tillage Specialist"
 description: "Professional middle gear transmission rotary tillers designed for 15-160HP tractors, delivering high-quality performance in both dry land and paddy fields."
-image: "/img/implement/rotary-tiller-main.jpg"
+image: "/img/cultivator/1gqn.jpg"
 category: "Tillage"
 tags: ["Rotary Tiller", "Soil Preparation", "1GQN Series", "Paddy Field Machinery"]
 ---
