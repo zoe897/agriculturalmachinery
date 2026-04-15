@@ -47,7 +47,7 @@ Every 1LY(SX) plough undergoes rigorous testing to ensure it meets international
 
 <div class="video-container">
   <iframe 
-    src="https://www.youtube.com/embed/example-video-id" 
+    src="https://youtu.be/f0NPVX5Qoe4?si=0vQvnieXbWVRCWq9" 
     title="1LY(SX) Disc Plough Operation"
     frameborder="0" 
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
