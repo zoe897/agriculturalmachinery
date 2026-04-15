@@ -2,8 +2,8 @@
 title: "3Z Series Adjustable Disc Ridger: Precision Soil Bed Preparation"
 series: "Primary Tillage & Ridging"
 description: "Heavy-duty adjustable disc ridger for 20-90HP tractors. Features 65Mn heat-treated steel discs for creating perfect ridges in diverse soil conditions."
-image: "/img/implement/tillage/adjustable-disc-ridger.jpg"
-category: "Tillage"
+image: "/img/cultivator/3zridger.jpg"
+category: "implement/tillage"
 tags: ["Disc Ridger", "Soil Ridging", "Adjustable Ridger", "3Z Series", "Farm Implements"]
 ---
 

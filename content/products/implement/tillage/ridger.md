@@ -2,8 +2,8 @@
 title: "3QL Series Ditching Ridger: Universal Ridging Solution for Root Crops"
 series: "Professional Bed Preparation & Maintenance"
 description: "Versatile 3-point mounted ditching ridger for potato, bean, and vegetable cultivation. Features adjustable row spacing and wide tractor compatibility (20-60HP)."
-image: "/img/implement/tillage/3ql-ditching-ridger.jpg"
-category: "Tillage"
+image: "/img/cultivator/3qlridger.jpg"
+category: "implement/tillage"
 tags: ["Ditching Ridger", "Potato Ridging", "Row Crop Cultivator", "3QL Series", "Bed Former"]
 ---
 

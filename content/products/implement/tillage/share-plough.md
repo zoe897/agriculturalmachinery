@@ -2,8 +2,8 @@
 title: "IL Series Fully Suspended Share Plough: Heavy-Duty Primary Tillage"
 series: "Professional Soil Preparation"
 description: "High-performance suspended share plough for diverse soil types, including sandy and loamy upland farming. Designed for deep penetration and superior pulverization."
-image: "/img/implement/tillage/share-plough-main.jpg"
-category: "Tillage"
+image: "/img/plough/shareplough1.jpg"
+category: "implement/tillage"
 tags: ["Share Plough", "Primary Tillage", "Suspended Plough", "IL Series", "Farm Implements"]
 ---
 

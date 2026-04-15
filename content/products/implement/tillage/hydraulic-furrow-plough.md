@@ -2,8 +2,8 @@
 title: "1LF/ILF Series Hydraulic Reversible Plough: High-Efficiency Two-Way Tillage"
 series: "Professional Primary Tillage Solutions"
 description: "Heavy-duty hydraulic reversible share plough for 30-200HP tractors. Designed for seamless soil inversion, surface leveling, and rapid primary tillage in dry and sandy soils."
-image: "/img/implement/tillage/reversible-plough-main.jpg"
-category: "Tillage"
+image: "/img/plough/hydraulicplough.jpg"
+category: "implement/tillage"
 tags: ["Reversible Plough", "Hydraulic Plough", "Primary Tillage", "1LF Series", "Hydraulic Tillage Tools"]
 ---
 
