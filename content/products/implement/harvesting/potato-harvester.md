@@ -3,6 +3,11 @@ title: "4U Series Potato & Sweet Potato Harvester: Efficient Root Crop Recovery"
 series: "Root Crop Harvesting Excellence"
 description: "Professional vibration-sieve potato harvester for 8-80HP tractors. Engineered for high soil-crop separation and minimal tuber skin damage."
 image: "/img/seed/potatoharvester.jpg"
+# 增加 parent 字段，明确指向上级目录
+parent: "/products/implement" 
+# 确保 permalink 包含完整路径
+permalink: /products/implement/harvesting/potato-harvester/ 
+---
 category: "implement/harvesting"
 tags: ["Potato Harvester", "Sweet Potato Digger", "Root Crop Harvesting", "4U Series", "Vibration Sieve"]
 ---
