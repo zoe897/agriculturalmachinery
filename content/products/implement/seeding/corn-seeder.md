@@ -2,8 +2,8 @@
 title: "2BYCF Series Corn Seeder: High-Precision Maize & Bean Planter"
 series: "Multi-Functional Sowing Solutions"
 description: "Professional gravity-fed corn seeder with simultaneous fertilization. Features 'Zero Speed' low-position discharge for high-precision, damage-free planting."
-image: "/img/implement/seeding/corn-seeder-main.jpg"
-category: "Seeding"
+image: "/img/seed/cornseeder.jpg"
+category: "implement/seeding"
 tags: ["Corn Seeder", "Maize Planter", "Precision Planting", "Fertilizing Seeder", "2BYCF Series"]
 ---
 
