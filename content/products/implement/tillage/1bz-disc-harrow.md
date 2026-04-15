@@ -3,7 +3,7 @@ title: "Heavy-Duty Hydraulic Disc Harrow Series | 1BZ & European Type"
 description: "Professional soil preparation for heavy clay, wasteland, and weedy fields. Features hydraulic lifting wheels and high-penetration discs."
 image: "/img/harrow/1bz-heavy.jpg"
 series: "Heavy-Duty Harrow"
-category: "Harrow"
+category: "Implement/tillage"
 tags: ["Heavy Duty Harrow", "Hydraulic Disc Harrow", "Soil Preparation", "1BZ", "YJ-BZY"]
 ---
 

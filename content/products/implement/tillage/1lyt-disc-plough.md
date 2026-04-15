@@ -3,7 +3,7 @@ title: "1LYT Series One-way Disc Plough"
 description: "High-performance soil preparation equipment designed for cultivated and virgin land, featuring excellent soil inversion and low resistance."
 image: "/img/plough/1lyt.png"
 series: "Disc Plough"
-category: "Implement/Tillage"
+category: "Implement/tillage"
 tags: ["One-way Disc Plough", "Agriculture Machinery", "High Efficiency"]
 ---
 

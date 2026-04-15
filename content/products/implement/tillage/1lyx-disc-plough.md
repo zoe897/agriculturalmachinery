@@ -3,7 +3,7 @@ title: "1LYX Series Disc Plough"
 description: "Professional heavy-duty disc plough designed for tough soil conditions with stones, roots, and heavy weeds."
 image: "/img/plough/1lyx-main.jpg"
 ---series: "Disc Plough"
-category: "Implement/Tillage"
+category: "Implement/tillage"
 tags: ["One-way Disc Plough", "Agriculture Machinery", "High Efficiency"]
 
 # 1LYX Series Disc Plough

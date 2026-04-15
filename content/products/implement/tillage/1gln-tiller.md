@@ -3,7 +3,7 @@ title: "1GLN Series European Style Rotary Tiller (Side Gear Drive)"
 series: "European Precision Tillage"
 description: "High-performance side-gear transmission rotary tillers for 12-100HP tractors. Designed for zero-track soil finishing in dry and paddy fields."
 image: "/img/cultivator/1gln.jpg"
-category: "Tillage"
+category: "Implement/tillage"
 tags: ["Side Gear Tiller", "European Standard", "1GLN Series", "Soil Cultivation"]
 ---
 

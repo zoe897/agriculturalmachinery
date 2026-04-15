@@ -3,7 +3,7 @@ title: "Light-duty Disc Harrow Series | 1BQX & 1BQDX"
 description: "High-efficiency soil crushing and seedbed preparation. Featuring Mounted Offset and Opposed designs for versatile farming conditions."
 image: "/img/harrow/harrow-main.jpg"
 series: "Disc Harrow"
-category: "Harrow"
+category: "implement/tillage"
 tags: ["Disc Harrow", "Soil Preparation", "1BQX", "1BQDX"]
 ---
 

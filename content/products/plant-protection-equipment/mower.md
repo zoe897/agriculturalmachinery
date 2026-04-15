@@ -2,8 +2,8 @@
 title: "Agricultural Mower Series: Rotary Slasher & Reciprocating Mower"
 series: "Land Clearance Experts"
 description: "Professional mowing solutions from 1200mm to 2100mm, designed for ranch renovation, bush clearing, and sloping pasture harvesting."
-image: "/img/implement/mower-main.jpg"
-category: "Implements"
+image: "/img/seed/mower.jpg"
+category: "Plant-protection-equipment"
 tags: ["Mower", "Rotary Slasher", "Reciprocating Mower", "Hay Harvesting"]
 ---
 
