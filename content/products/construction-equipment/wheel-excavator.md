@@ -3,7 +3,7 @@ title: "HT215H Wheeled Excavator: High-Mobility & Versatile Urban Engineering Po
 series: "Professional Wheeled Excavator Series"
 description: "Premium 21-ton wheeled excavator HT215H. Featuring advanced dual-pump hydraulic systems, high travel speeds, and reinforced structures for urban construction and road maintenance."
 image: "/img/excavator/215h.jpg"
-category: "Excavators"
+category: "construction-equipment"
 tags: ["Wheeled Excavator", "HT215H", "Rubber Tyre Excavator", "Urban Construction", "Mobile Digger"]
 ---
 

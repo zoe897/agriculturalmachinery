@@ -3,7 +3,7 @@ title: "HT215K Wheeled Material Handler: Precision Loading & Grabbing Excellence
 series: "Specialized Material Handling Solutions"
 description: "High-performance 21-ton wheeled material handler HT215K. Equipped with elevating cab, extended boom, and professional grapples for scrap metal, timber, and waste management."
 image: "/img/excavator/215k.png"
-category: "Material Handlers"
+category: "construction-equipment"
 tags: ["Material Handler", "Wheeled Grapple Excavator", "HT215K", "Scrap Handler", "Timber Loader"]
 ---
 
