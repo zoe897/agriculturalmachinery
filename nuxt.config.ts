@@ -1,83 +1,76 @@
+import { defineNuxtConfig } from 'nuxt/config'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // 1. 合并后的 RuntimeConfig (修复冲突)
+  // 1. 运行配置：合并前端与后端环境变量
   runtimeConfig: {
-    // 只有在服务端可以访问 (用于发送邮件)
-    emailUser: process.env.NUXT_EMAIL_USER,
-    emailPass: process.env.NUXT_EMAIL_PASS,
-    
-    // public 里的内容可以在前端（浏览器）访问
+    // 仅服务端可见
+    emailUser: (process as any).env.NUXT_EMAIL_USER,
+    emailPass: (process as any).env.NUXT_EMAIL_PASS,
+    // 前端浏览器可见
     public: {
-      web3FormsKey: process.env.WEB3FORMS_KEY
+      web3FormsKey: (process as any).env.WEB3FORMS_KEY
     }
   },
 
-  // 2. 模块配置 (添加了关键的 @nuxt/image 和 @nuxtjs/tailwindcss)
+  // 2. 模块配置：激活核心功能
   modules: [
     '@nuxt/content',
-    '@nuxtjs/sitemap',
-    '@nuxt/image',      // <--- 必须添加，解决之前的 Build 报错
-    '@nuxtjs/tailwindcss' // <--- 确保 Tailwind 模块也被正确加载
+    '@nuxt/image',      
+    '@nuxtjs/tailwindcss', // 自动处理 Tailwind CSS v4
+    '@nuxtjs/sitemap'
   ],
 
-  // 3. 针对外贸站的图片优化配置
+  // 3. 图片优化：为外贸站大图提供自动压缩
   image: {
     format: ['webp'],
     quality: 80,
-    // 如果你有远程图片，可以在这里配置 domains
   },
 
-  // 4. 路由规则：针对农机产品页进行预渲染优化
+  // 4. 路由与预渲染：提升产品页 Google 索引速度
   routeRules: {
     '/': { prerender: true },
-    // 自动预渲染所有产品深层路径，提升海外打开速度
     '/products/**': { prerender: true }, 
   },
 
-  // 5. 核心 App 设置
+  // 5. App 基础设置：SEO 友好
   app: {
-    baseURL: process.env.NUXT_APP_BASE_URL || '/',
+    baseURL: (process as any).env.NUXT_APP_BASE_URL || '/',
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
-      htmlAttrs: { lang: 'en' }, // 外贸站建议强制设为英文
+      htmlAttrs: { lang: 'en' },
       link: [
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap' }
+        { 
+          rel: 'stylesheet', 
+          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap' 
+        }
       ]
     }
   },
 
-  // 6. 其他技术配置
+  // 6. 其他技术参数
   css: ['~/assets/css/main.css'],
   
-  future: {
-    compatibilityVersion: 4,
+  future: { 
+    compatibilityVersion: 4 
   },
   
   compatibilityDate: '2024-04-03',
   
   devtools: { enabled: true },
 
-  nitro: {
-    preset: 'static' // 强制静态化，适合 Vercel/Cloudflare Pages 部署
+  nitro: { 
+    preset: 'static' 
   },
 
-  postcss: {
-    plugins: {
-      '@tailwindcss/postcss': {},
-      autoprefixer: {}
-    }
-  },
-
+  // 7. 构建优化
   vite: {
     optimizeDeps: {
-      include: [
-        '@vue/devtools-core',
-        '@vue/devtools-kit',
-        'lucide-vue-next',
-      ]
+      include: ['@vue/devtools-core', '@vue/devtools-kit', 'lucide-vue-next']
     }
   },
 
+  // 8. Vue 指令兼容
   vue: {
     compilerOptions: {
       isCustomElement: (tag) => ['count', 'scroll-reveal', 'scroll-group'].includes(tag)
