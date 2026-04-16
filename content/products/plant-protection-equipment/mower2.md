@@ -2,8 +2,8 @@
 title: "DM Series Rotary Drum Mower: Efficient Grass Harvesting for Hilly & Rough Terrains"
 series: "High-Performance Ranch Management"
 description: "Professional rotary drum mowers for 20-60HP tractors. Designed for natural and planted grasses in ranch, mountain, and hilly areas. Perfect for large-scale livestock farming in Africa."
-image: "/img/implement/harvesting/drum-mower.jpg"
-category: "Harvesting"
+image: "/img/seed/mower2.jpg"
+category: "plant-protection-equipment"
 tags: ["Drum Mower", "Rotary Mower", "Grass Cutter Africa", "DM Series", "Pasture Harvesting"]
 ---
 
