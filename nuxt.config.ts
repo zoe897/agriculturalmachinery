@@ -46,7 +46,7 @@ export default defineNuxtConfig({
   },
 
   // 6. 核心 CSS 导入
-  css: ['~/assets/css/main.css'],
+  css: ['@/assets/css/main.css'],
 
   // 7. PostCSS 强制修正
   postcss: {
