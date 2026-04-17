@@ -1,27 +1,24 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   // 1. 运行配置：合并前端与后端环境变量
   runtimeConfig: {
-    // 仅服务端可见
     emailUser: (process as any).env.NUXT_EMAIL_USER,
     emailPass: (process as any).env.NUXT_EMAIL_PASS,
-    // 前端浏览器可见
     public: {
       web3FormsKey: (process as any).env.WEB3FORMS_KEY
     }
   },
 
-  // 2. 模块配置：激活核心功能
+  // 2. 模块配置
   modules: [
     '@nuxt/content',
     '@nuxt/image',      
-    '@nuxtjs/tailwindcss', // 自动处理 Tailwind CSS v4
+    '@nuxtjs/tailwindcss', 
     '@nuxtjs/sitemap'
   ],
 
-  // 3. 图片优化：为外贸站大图提供自动压缩
+  // 3. 图片优化
   image: {
     format: ['webp'],
     quality: 80,
@@ -33,7 +30,7 @@ export default defineNuxtConfig({
     '/products/**': { prerender: true }, 
   },
 
-  // 5. App 基础设置：SEO 友好
+  // 5. App 基础设置
   app: {
     baseURL: (process as any).env.NUXT_APP_BASE_URL || '/',
     pageTransition: { name: 'page', mode: 'out-in' },
@@ -48,8 +45,16 @@ export default defineNuxtConfig({
     }
   },
 
-  // 6. 其他技术参数
+  // 6. 核心 CSS 导入
   css: ['~/assets/css/main.css'],
+
+  // ⭐ 7. PostCSS 强制修正：显式指定 v4 插件，解决 "It looks like you're trying to use tailwindcss directly" 报错
+  postcss: {
+    plugins: {
+      '@tailwindcss/postcss': {},
+      'autoprefixer': {}
+    }
+  },
   
   future: { 
     compatibilityVersion: 4 
@@ -63,14 +68,14 @@ export default defineNuxtConfig({
     preset: 'static' 
   },
 
-  // 7. 构建优化
+  // 8. 构建优化
   vite: {
     optimizeDeps: {
       include: ['@vue/devtools-core', '@vue/devtools-kit', 'lucide-vue-next']
     }
   },
 
-  // 8. Vue 指令兼容
+  // 9. Vue 指令兼容
   vue: {
     compilerOptions: {
       isCustomElement: (tag) => ['count', 'scroll-reveal', 'scroll-group'].includes(tag)
