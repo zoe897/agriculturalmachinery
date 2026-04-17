@@ -1,7 +1,7 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
-  // 1. 运行配置：合并前端与后端环境变量
+  // 1. 运行配置：环境变量
   runtimeConfig: {
     emailUser: (process as any).env.NUXT_EMAIL_USER,
     emailPass: (process as any).env.NUXT_EMAIL_PASS,
@@ -24,13 +24,13 @@ export default defineNuxtConfig({
     quality: 80,
   },
 
-  // 4. 路由与预渲染：提升产品页 Google 索引速度
+  // 4. 路由与预渲染
   routeRules: {
     '/': { prerender: true },
     '/products/**': { prerender: true }, 
   },
 
-  // 5. App 基础设置
+  // 5. App 基础设置：SEO 友好
   app: {
     baseURL: (process as any).env.NUXT_APP_BASE_URL || '/',
     pageTransition: { name: 'page', mode: 'out-in' },
@@ -48,14 +48,21 @@ export default defineNuxtConfig({
   // 6. 核心 CSS 导入
   css: ['~/assets/css/main.css'],
 
-  // ⭐ 7. PostCSS 强制修正：显式指定 v4 插件，解决 "It looks like you're trying to use tailwindcss directly" 报错
+  // ⭐ 7. PostCSS 强制修正：这是解决你 Vercel 报错的核心
   postcss: {
     plugins: {
-      '@tailwindcss/postcss': {},
+      '@tailwindcss/postcss': {}, 
       'autoprefixer': {}
     }
   },
+
+  // ⭐ 8. Tailwind 模块补丁：强制忽略外部 JS 配置文件
+  tailwindcss: {
+    configPath: '', 
+    viewer: false
+  },
   
+  // 9. 技术参数
   future: { 
     compatibilityVersion: 4 
   },
@@ -68,14 +75,14 @@ export default defineNuxtConfig({
     preset: 'static' 
   },
 
-  // 8. 构建优化
+  // 10. 构建优化
   vite: {
     optimizeDeps: {
       include: ['@vue/devtools-core', '@vue/devtools-kit', 'lucide-vue-next']
     }
   },
 
-  // 9. Vue 指令兼容
+  // 11. Vue 指令兼容
   vue: {
     compilerOptions: {
       isCustomElement: (tag) => ['count', 'scroll-reveal', 'scroll-group'].includes(tag)
