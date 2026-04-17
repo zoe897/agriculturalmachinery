@@ -89,3 +89,10 @@ export default defineNuxtConfig({
     }
   }
 })
+// ... 其他配置
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => ['count', 'scroll-reveal', 'scroll-group'].includes(tag)
+    }
+  }
+}) // <--- 确保最后这里有一个 })
