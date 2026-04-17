@@ -1,7 +1,7 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
-  // 1. 运行配置：环境变量
+  // 1. 运行配置
   runtimeConfig: {
     emailUser: (process as any).env.NUXT_EMAIL_USER,
     emailPass: (process as any).env.NUXT_EMAIL_PASS,
@@ -30,7 +30,7 @@ export default defineNuxtConfig({
     '/products/**': { prerender: true }, 
   },
 
-  // 5. App 基础设置：SEO 友好
+  // 5. App 基础设置
   app: {
     baseURL: (process as any).env.NUXT_APP_BASE_URL || '/',
     pageTransition: { name: 'page', mode: 'out-in' },
@@ -48,7 +48,7 @@ export default defineNuxtConfig({
   // 6. 核心 CSS 导入
   css: ['~/assets/css/main.css'],
 
-  // ⭐ 7. PostCSS 强制修正：这是解决你 Vercel 报错的核心
+  // 7. PostCSS 强制修正
   postcss: {
     plugins: {
       '@tailwindcss/postcss': {}, 
@@ -56,7 +56,7 @@ export default defineNuxtConfig({
     }
   },
 
-  // ⭐ 8. Tailwind 模块补丁：强制忽略外部 JS 配置文件
+  // 8. Tailwind 模块补丁
   tailwindcss: {
     configPath: '', 
     viewer: false
@@ -89,10 +89,3 @@ export default defineNuxtConfig({
     }
   }
 })
-// ... 其他配置
-  vue: {
-    compilerOptions: {
-      isCustomElement: (tag) => ['count', 'scroll-reveal', 'scroll-group'].includes(tag)
-    }
-  }
-}) // <--- 确保最后这里有一个 })
