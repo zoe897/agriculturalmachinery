@@ -1,33 +1,11 @@
-/* 1. 核心导入：这一行会加载 Tailwind v4 的所有基础样式 */
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* 2. 主题定义：定义你的品牌色和字体 */
-@theme {
-  --color-brand: #2d5a27; /* 你的品牌绿 */
-  --color-brand-light: #4c8b3f;
-  
-  /* 如果你在 nuxt.config.ts 引用了 Inter 字体，这里建立关联 */
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+html {
+  scroll-behavior: smooth;
 }
 
-/* 3. 基础全局样式修正 */
-@layer base {
-  html {
-    -webkit-tap-highlight-color: transparent;
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    @apply antialiased text-gray-900 bg-white;
-    font-family: var(--font-sans);
-  }
-}
-
-/* 4. 自定义组件类（可选，如果你的代码里用到了这些 class） */
-@layer components {
-  .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent 
-           text-base font-medium rounded-md text-white bg-brand hover:bg-brand-light 
-           transition-colors duration-200;
-  }
+body {
+  font-family: 'Inter', sans-serif;
 }
