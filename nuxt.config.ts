@@ -54,7 +54,7 @@ export default defineNuxtConfig({
   },
 
   // 8. 样式路径
-  css: ['~/app/assets/css/main.css'],
+  css: ['~/assets/css/main.css'],
 
   // 9. 兼容性与服务端配置
   compatibilityDate: '2024-04-03',
