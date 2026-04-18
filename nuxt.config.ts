@@ -1,17 +1,14 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
-  // 1. 站点基础信息（修复 Sitemap 报错的关键）
-  site: {
-    url: process.env.NUXT_PUBLIC_SITE_URL || 'https://your-actual-domain.vercel.app'
-  },
-
-  // 2. 模块配置
+  // 1. 暂时先不要 site 域名配置（因为它主要是给 sitemap 用的）
+  
+  // 2. 模块配置：把 '@nuxtjs/sitemap' 删掉
   modules: [
     '@nuxt/content',
     '@nuxt/image',      
     '@nuxtjs/tailwindcss', 
-    '@nuxtjs/sitemap'
+    // '@nuxtjs/sitemap'  <-- 删掉这一行
   ],
 
   // 3. 环境变量配置
@@ -23,25 +20,25 @@ export default defineNuxtConfig({
     }
   },
 
-  // 4. Sitemap 容错优化
-  sitemap: {
+  // 4. 删掉这一整块 sitemap 配置
+  /* sitemap: {
     strictNuxtContentAds: false,
     discoverImages: false
-  },
+  }, */
 
-  // 5. 图片优化
+  // 5. 图片优化（保持现状）
   image: {
     format: ['webp'],
     quality: 80,
   },
 
-  // 6. 路由与预渲染
+  // 6. 路由与预渲染（这是重点，确保你的产品页能被静态化）
   routeRules: {
     '/': { prerender: true },
     '/products/**': { prerender: true }, 
   },
 
-  // 7. 全局页面配置
+  // 7. 全局页面配置（保持现状）
   app: {
     baseURL: process.env.NUXT_APP_BASE_URL || '/',
     pageTransition: { name: 'page', mode: 'out-in' },
@@ -56,7 +53,7 @@ export default defineNuxtConfig({
     }
   },
 
-  // 8. 样式路径（已对齐你的 app/ 目录）
+  // 8. 样式路径
   css: ['~/app/assets/css/main.css'],
 
   // 9. 兼容性与服务端配置
