@@ -1,32 +1,26 @@
 <template>
-  <NuxtLoadingIndicator :duration="1000" :throttle="0" :height="5" />
+  <div>
 
-  <HeaderNavbar />
+    <HeaderNavbar />
 
-  <main class="mt-24">
-    <slot />
-  </main>
+    <main class="mt-24">
+      <slot />
+    </main>
 
-  <FooterBlock />
+    <FooterBlock />
+
+    <a
+      href="https://wa.me/8619743003775/8613066010625"
+      target="_blank"
+      class="fixed bottom-5 right-5 bg-green-500 text-white px-4 py-3 rounded-full"
+    >
+      WhatsApp
+    </a>
+
+  </div>
 </template>
 
 <script setup>
 import HeaderNavbar from '~/components/Header/Navbar.vue'
 import FooterBlock from '~/components/Footer/Block.vue'
 </script>
-
-<style scoped>
-.custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
-}
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #e2e8f0;
-  border-radius: 10px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #cbd5e1;
-}
-</style>
