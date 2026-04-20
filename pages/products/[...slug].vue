@@ -215,3 +215,13 @@ watch(() => route.path, () => refresh())
   margin: 2.5rem 0;
 }
 </style>
+const { data: result } = await useAsyncData(() => {
+  return queryCollection('products')
+    .path(cleanPath.value)
+    .first()
+}, {
+  default: () => ({
+    page: null,
+    subItems: []
+  })
+})

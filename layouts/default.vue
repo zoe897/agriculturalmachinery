@@ -1,14 +1,21 @@
 <template>
-    <NuxtLoadingIndicator :duration="1000" :throttle="0" :height="5"></NuxtLoadingIndicator>
-    
-    <HeaderNavbar />
+  <div>
+    <ClientOnly>
+      <HeaderNavbar />
+    </ClientOnly>
 
-    <div class="mt-24">
-        <slot />
-    </div>
+    <main class="mt-24">
+      <slot />
+    </main>
 
     <FooterBlock />
+  </div>
 </template>
+
+<script setup>
+import HeaderNavbar from '~/components/Header/Navbar.vue'
+import FooterBlock from '~/components/Footer/Block.vue'
+</script>
 
 <script setup>
 /**
