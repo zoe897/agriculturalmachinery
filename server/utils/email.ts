@@ -4,8 +4,8 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function sendEmail(data) {
   await resend.emails.send({
-    from: 'HECOTH <inquiry@yourdomain.com>',
-    to: 'your-email@gmail.com',
+    from: 'HECOTH <zoe@annetop.com/anna@annetop.com>',
+    to: 'zoe@annetop.com/anna@annetop.com',
     subject: `New Inquiry - ${data.product}`,
     html: `
       <h2>New Inquiry</h2>

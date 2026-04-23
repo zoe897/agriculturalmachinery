@@ -1,5 +1,6 @@
 import { sendEmail } from '~/server/utils/email'
 import { saveToSheet } from '~/server/utils/googleSheet'
+import { generateWhatsAppLink } from '~/server/utils/whatsapp'
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
@@ -19,7 +20,17 @@ export default defineEventHandler(async (event) => {
   // 2. 写入 Google Sheet
   await saveToSheet(inquiry)
 
+  // 3. 生成 WhatsApp 跳转链接（关键）
+  const whatsappLink = generateWhatsAppLink({
+    phone: "8619743003775/8613066010625",
+    name: inquiry.name,
+    country: inquiry.country,
+    product: inquiry.product,
+    message: inquiry.message
+  })
+
   return {
-    success: true
+    success: true,
+    whatsappLink
   }
 })
