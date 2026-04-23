@@ -14,15 +14,16 @@ export default defineEventHandler(async (event) => {
     time: new Date().toISOString()
   }
 
+  // 1. 邮件
   await sendEmail(inquiry)
+
+  // 2. 写入 Google Sheet
   await saveToSheet(inquiry)
 
+  // 3. WhatsApp 链接
   const whatsappLink = generateWhatsAppLink({
-    phone: "8619743003775/8613066010625",
-    name: body.name,
-    country: body.country,
-    product: body.product,
-    message: body.message
+    phone: process.env.WHATSAPP_PHONE || '8619743003775/8613066010625',
+    ...inquiry
   })
 
   return {

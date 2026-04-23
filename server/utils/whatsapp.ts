@@ -1,29 +1,17 @@
-export function generateWhatsAppLink({
-  phone,
-  name,
-  country,
-  product,
-  message
-}: {
+export function generateWhatsAppLink(params: {
   phone: string
-  name?: string
+  name: string
   country?: string
   product?: string
   message?: string
 }) {
-  
   const text = `
-Hello, I am interested in your products.
+New Inquiry:
+Name: ${params.name}
+Country: ${params.country || '-'}
+Product: ${params.product || '-'}
+Message: ${params.message || '-'}
+`
 
-Name: ${name || "N/A"}
-Country: ${country || "N/A"}
-Product: ${product || "General Inquiry"}
-Message: ${message || "Please send me details and price."}
-
-Please reply with your best offer.
-  `.trim()
-
-  const encodedText = encodeURIComponent(text)
-
-  return `https://wa.me/${phone}?text=${encodedText}`
+  return `https://wa.me/${params.phone}?text=${encodeURIComponent(text)}`
 }
