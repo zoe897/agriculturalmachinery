@@ -2,128 +2,130 @@
   <div>
 
     <!-- HERO -->
-    <section class="hero">
-      <div class="overlay">
-        <h1>Agricultural Machinery Manufacturer China</h1>
-        <p>16+ Years Factory | OEM Service | Global Export</p>
+    <section class="py-16 text-center bg-white">
+      <h1 class="text-4xl font-bold mb-4">
+        Reliable Agricultural & Construction Machinery Supplier from China
+      </h1>
+      <p class="text-gray-600 mb-6">
+        Backed by 17 years of factory experience, we help global distributors source durable,
+        cost-effective machinery with stable quality and fast delivery.
+      </p>
 
-        <a href="#inquiry" class="btn">
-          Get Free Quote
-        </a>
+      <div class="flex justify-center gap-4 mb-4">
+        <button class="bg-green-600 text-white px-6 py-3 rounded">
+          Get a Quote
+        </button>
+        <button class="border px-6 py-3 rounded">
+          View Products
+        </button>
       </div>
+
+      <p class="text-sm text-gray-500">
+        ✔ 17 Years Experience | ✔ OEM & ODM | ✔ Global Export
+      </p>
     </section>
 
     <!-- PRODUCTS -->
-    <section class="section">
-      <h2>Hot Products</h2>
+    <section class="py-16">
+      <h2 class="text-3xl font-bold text-center mb-10">Our Product Range</h2>
 
-      <div class="grid">
+      <div class="grid md:grid-cols-4 gap-6 px-6 max-w-6xl mx-auto">
 
-        <NuxtLink to="/products/tractor" class="card">
-          🚜 Tractor
-        </NuxtLink>
+        <div class="p-6 shadow rounded">
+          <h3 class="font-semibold mb-2">Agricultural Machinery</h3>
+          <p class="text-sm text-gray-600">
+            Tractors and farm equipment designed for efficiency and durability.
+          </p>
+        </div>
 
-        <NuxtLink to="/products/seeder" class="card">
-          🌱 Seeder
-        </NuxtLink>
+        <div class="p-6 shadow rounded">
+          <h3 class="font-semibold mb-2">Construction Machinery</h3>
+          <p class="text-sm text-gray-600">
+            Reliable equipment for engineering projects.
+          </p>
+        </div>
 
-        <NuxtLink to="/products/plow" class="card">
-          🛠 Plow
-        </NuxtLink>
+        <div class="p-6 shadow rounded">
+          <h3 class="font-semibold mb-2">Plant Protection</h3>
+          <p class="text-sm text-gray-600">
+            Sprayers and crop protection solutions.
+          </p>
+        </div>
 
-        <NuxtLink to="/products/disc-harrow" class="card">
-          ⚙ Disc Harrow
-        </NuxtLink>
+        <div class="p-6 shadow rounded">
+          <h3 class="font-semibold mb-2">Spare Parts</h3>
+          <p class="text-sm text-gray-600">
+            Stable supply of high-quality replacement parts.
+          </p>
+        </div>
 
       </div>
     </section>
 
-    <!-- TRUST -->
-    <section class="trust">
-      <div>✔ 16+ Years Experience</div>
-      <div>✔ CE / ISO Certified</div>
-      <div>✔ Export to 30+ Countries</div>
+    <!-- WHY -->
+    <section class="bg-gray-100 py-16">
+      <h2 class="text-3xl font-bold text-center mb-10">Why Choose HECOTH</h2>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto px-6">
+
+        <div>
+          <h3 class="font-semibold">17 Years Industry Experience</h3>
+          <p class="text-sm text-gray-600">
+            Strong manufacturing background ensures product quality.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold">Stable Quality Control</h3>
+          <p class="text-sm text-gray-600">
+            Strict inspection before shipment.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold">Competitive Pricing</h3>
+          <p class="text-sm text-gray-600">
+            Factory-based sourcing advantage.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold">OEM & Customization</h3>
+          <p class="text-sm text-gray-600">
+            Flexible solutions for your market.
+          </p>
+        </div>
+
+      </div>
     </section>
 
-    <!-- INQUIRY -->
-    <section id="inquiry" class="inquiry">
-      <h2>Get Free Quote</h2>
+    <!-- ABOUT -->
+    <section class="py-16 text-center max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-6">About HECOTH</h2>
+      <p class="text-gray-600">
+        JINAN HECOTH INTERNATIONAL TRADING CO., LTD is a professional supplier of agricultural and construction machinery.
+        With over 17 years of manufacturing experience, we provide reliable products, competitive pricing,
+        and long-term cooperation for global partners.
+      </p>
+    </section>
 
-      <form>
-        <input placeholder="Name" />
-        <input placeholder="Email / WhatsApp" />
-        <textarea placeholder="Requirement"></textarea>
+    <!-- CTA -->
+    <section class="bg-green-600 text-white text-center py-16">
+      <h2 class="text-3xl font-bold mb-4">Get a Quote Today</h2>
+      <p class="mb-6">Contact us now and get a response within 24 hours.</p>
 
-        <button type="submit">
-          Send Inquiry
-        </button>
-      </form>
+      <button class="bg-white text-green-600 px-6 py-3 rounded">
+        Send Inquiry
+      </button>
     </section>
 
   </div>
 </template>
 
+<script setup>
+// 这里暂时不用写逻辑
+</script>
+
 <style scoped>
-
-.hero {
-  height: 60vh;
-  background: #001151;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.btn {
-  background: #25D366;
-  padding: 12px 20px;
-  display: inline-block;
-  margin-top: 20px;
-  color: white;
-  border-radius: 6px;
-}
-
-.section {
-  padding: 40px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-}
-
-.card {
-  padding: 20px;
-  background: #f5f5f5;
-  text-align: center;
-}
-
-.trust {
-  display: flex;
-  justify-content: space-around;
-  padding: 30px;
-  background: #f0f0f0;
-}
-
-.inquiry {
-  padding: 50px;
-  background: #001151;
-  color: white;
-}
-
-input, textarea {
-  width: 100%;
-  margin-top: 10px;
-  padding: 10px;
-}
-
-button {
-  margin-top: 10px;
-  background: #25D366;
-  color: white;
-  padding: 10px;
-  width: 100%;
-}
+/* 如果你需要自定义样式可以写这里 */
 </style>
