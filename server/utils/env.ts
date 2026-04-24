@@ -3,4 +3,4 @@ export const env = {
   googleSheetId: process.env.GOOGLE_SHEET_ID!,
   googleClientEmail: process.env.GOOGLE_CLIENT_EMAIL!,
   googlePrivateKey: process.env.GOOGLE_PRIVATE_KEY!,
-}v
+};
