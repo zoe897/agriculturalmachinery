@@ -1,0 +1,58 @@
+import { mergeProps, useSSRContext } from 'file:///workspaces/agriculturalmachinery/node_modules/vue/index.mjs';
+import { ssrRenderAttrs } from 'file:///workspaces/agriculturalmachinery/node_modules/vue/server-renderer/index.mjs';
+import { _ as _export_sfc } from './server.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/ofetch/dist/node.mjs';
+import '../nitro/nitro.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/h3/dist/index.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/ufo/dist/index.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/unified/index.js';
+import 'file:///workspaces/agriculturalmachinery/node_modules/remark-parse/index.js';
+import 'file:///workspaces/agriculturalmachinery/node_modules/remark-rehype/index.js';
+import 'file:///workspaces/agriculturalmachinery/node_modules/remark-mdc/dist/index.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/defu/dist/defu.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/remark-gfm/index.js';
+import 'file:///workspaces/agriculturalmachinery/node_modules/rehype-external-links/index.js';
+import 'file:///workspaces/agriculturalmachinery/node_modules/rehype-sort-attribute-values/index.js';
+import 'file:///workspaces/agriculturalmachinery/node_modules/rehype-sort-attributes/index.js';
+import 'file:///workspaces/agriculturalmachinery/node_modules/rehype-raw/index.js';
+import 'file:///workspaces/agriculturalmachinery/node_modules/detab/index.js';
+import 'file:///workspaces/agriculturalmachinery/node_modules/scule/dist/index.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/micromark-util-sanitize-uri/index.js';
+import 'file:///workspaces/agriculturalmachinery/node_modules/hast-util-to-string/index.js';
+import 'file:///workspaces/agriculturalmachinery/node_modules/github-slugger/index.js';
+import 'google-spreadsheet';
+import 'google-auth-library';
+import 'file:///workspaces/agriculturalmachinery/node_modules/destr/dist/index.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/hookable/dist/index.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/node-mock-http/dist/index.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/unstorage/dist/index.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/unstorage/drivers/fs.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/unstorage/drivers/fs-lite.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/unstorage/drivers/lru-cache.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/nitropack/node_modules/ohash/dist/index.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/klona/dist/index.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/unctx/dist/index.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/radix3/dist/index.mjs';
+import 'node:fs';
+import 'node:url';
+import 'file:///workspaces/agriculturalmachinery/node_modules/pathe/dist/index.mjs';
+import 'ipx';
+import 'file:///workspaces/agriculturalmachinery/node_modules/@nuxt/image/node_modules/pathe/dist/index.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/unhead/dist/index.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/@unhead/shared/dist/index.mjs';
+import 'file:///workspaces/agriculturalmachinery/node_modules/vue-router/vue-router.node.mjs';
+
+const _sfc_main = {};
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
+  _push(`<div${ssrRenderAttrs(mergeProps({ class: "min-h-screen flex items-center justify-center" }, _attrs))}><div class="text-center max-w-md"><h1 class="text-3xl font-bold mb-4"> Thank You! </h1><p class="mb-6 text-gray-600"> We will reply within 12 hours. </p><a href="https://wa.me/8619743003775/8613066010625" class="bg-green-600 text-white px-6 py-3 rounded inline-block"> Chat on WhatsApp Now </a></div></div>`);
+}
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/thank-you.vue");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+const thankYou = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
+
+export { thankYou as default };
+//# sourceMappingURL=thank-you-BNT_6Y2B.mjs.map

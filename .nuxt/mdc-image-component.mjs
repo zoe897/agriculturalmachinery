@@ -1,0 +1,1 @@
+export { default } from "/workspaces/agriculturalmachinery/node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue"

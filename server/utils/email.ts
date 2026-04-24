@@ -1,11 +1,12 @@
-import { Resend } from 'resend'
-
-const resend = new Resend(process.env.RESEND_API_KEY!)
-
 export async function sendEmail(data: any) {
+  const config = useRuntimeConfig()
+  const { Resend } = await import('resend')
+
+  const resend = new Resend(config.resendApiKey)
+
   await resend.emails.send({
     from: 'Inquiry <onboarding@resend.dev>',
-    to: process.env.ADMIN_EMAIL!,
+    to: config.googleClientEmail,
     subject: `New Inquiry from ${data.name}`,
     html: `
       <h3>New Inquiry</h3>

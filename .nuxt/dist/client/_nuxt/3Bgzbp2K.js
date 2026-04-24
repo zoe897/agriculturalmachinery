@@ -1,0 +1,1 @@
+import{_ as a,o as s,c as o,ab as r,a as n}from"./Cn3D6Jfv.js";const l={};function d(t,e){return s(),o("div",null,[r(t.$slots,"default",{},void 0,!0),e[0]||(e[0]=n("a",{href:"https://wa.me/861234567890?text=Hello%20I%20need%20a%20quote",class:"whatsapp",target:"_blank"}," WhatsApp ",-1))])}const f=a(l,[["render",d],["__scopeId","data-v-6c828711"]]);export{f as default};

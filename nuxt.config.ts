@@ -1,23 +1,22 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
-  // 1. 模块配置
+  // 1. Modules
   modules: [
     '@nuxt/content',
-    '@nuxt/image',      
-    '@nuxtjs/tailwindcss', 
+    '@nuxt/image',
+    '@nuxtjs/tailwindcss',
   ],
 
-  // 2. 组件自动扫描配置（方案 A：支持层级目录）
-  // 这样 components/header/navbar.vue 会自动映射为 <HeaderNavbar />
+  // 2. Components auto-import
   components: [
     {
       path: '~/components',
-      pathPrefix: true, 
+      pathPrefix: true,
     },
   ],
 
-  // 3. 明确目录结构（确保 Nuxt 指向根目录，彻底告别旧的 app/ 目录干扰）
+  // 3. Dir structure
   dir: {
     pages: 'pages',
     layouts: 'layouts',
@@ -26,50 +25,59 @@ export default defineNuxtConfig({
     assets: 'assets'
   },
 
-  // 4. 环境变量配置
+  // 4. ✅ Runtime Config（核心修复点）
   runtimeConfig: {
+    // 只在 server 端可访问（敏感信息）
     emailUser: process.env.NUXT_EMAIL_USER,
     emailPass: process.env.NUXT_EMAIL_PASS,
+    resendApiKey: process.env.RESEND_API_KEY,
+    googleSheetId: process.env.GOOGLE_SHEET_ID,
+    googleClientEmail: process.env.GOOGLE_CLIENT_EMAIL,
+    googlePrivateKey: process.env.GOOGLE_PRIVATE_KEY,
+
+    // 公开给前端（不能放敏感信息）
     public: {
-      web3FormsKey: process.env.WEB3FORMS_KEY
+      web3FormsKey: process.env.WEB3FORMS_KEY,
     }
   },
 
-  // 5. 图片优化
+  // 5. Image optimization
   image: {
     format: ['webp'],
     quality: 80,
   },
 
-  // 6. 路由规则与预渲染优化
+  // 6. Route rules
   routeRules: {
     '/': { prerender: true },
-    '/products/**': { prerender: true }, 
+    '/products/**': { prerender: true },
   },
 
-  // 7. 全局页面配置（SEO 与 字体）
+  // 7. App config
   app: {
     baseURL: process.env.NUXT_APP_BASE_URL || '/',
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       htmlAttrs: { lang: 'en' },
       link: [
-        { 
-          rel: 'stylesheet', 
-          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap' 
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap'
         }
       ]
     }
   },
 
-  // 8. 全局 CSS 路径
+  // 8. Global CSS
   css: ['~/assets/css/main.css'],
 
-  // 9. 兼容性与服务端配置
+  // 9. Compatibility
   compatibilityDate: '2024-04-03',
+
+  // 10. Nitro config
   nitro: {
     prerender: {
-      crawlLinks: true, // 开启自动爬取链接，确保所有 Markdown 产品页都能生成静态 HTML
+      crawlLinks: true,
       routes: ['/']
     },
     externals: {
