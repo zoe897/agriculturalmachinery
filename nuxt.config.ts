@@ -14,7 +14,6 @@ export default defineNuxtConfig({
     }
   ],
 
-  // 1. 修复防崩溃核心：为环境变量加上 || '' 兜底，防止 Prerender 阶段抛出 replace 错误
   runtimeConfig: {
     resendApiKey: process.env.RESEND_API_KEY || '',
     googleClientEmail: process.env.GOOGLE_CLIENT_EMAIL || '',
@@ -29,13 +28,14 @@ export default defineNuxtConfig({
     quality: 80
   },
 
+  // 1. 完全移除 routeRules 中的 prerender: true，断绝预渲染初始化
   routeRules: {
-    '/': { prerender: true },
-    '/products/**': { prerender: true }
+    '/': { ssr: true },
+    '/products/**': { ssr: true }
   },
 
   app: {
-    baseURL: process.env.NUXT_APP_BASE_URL || '/',
+    baseURL: '/', // 2. 直接写死根路径，不走 process.env，彻底消灭路径 replace 报错
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       htmlAttrs: { lang: 'en' },
@@ -55,11 +55,11 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2024-04-03',
 
-  // 2. 双重保险：优化 Nitro 预渲染配置
+  // 3. 彻底关闭 nitro 的预渲染行为
   nitro: {
     prerender: {
-      crawlLinks: false, // 避免自动爬取不存在的边缘死链接
-      failOnError: false // 即使预渲染某些零散文件出错，也允许整体编译绿灯通过
+      crawlLinks: false,
+      routes: []
     }
   }
 })
