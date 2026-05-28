@@ -1,6 +1,7 @@
+import { Resend } from 'resend'
+
 export async function sendEmail(data: any) {
   const config = useRuntimeConfig()
-  const { Resend } = await import('resend')
 
   const resend = new Resend(config.resendApiKey)
 
@@ -9,12 +10,15 @@ export async function sendEmail(data: any) {
     to: config.googleClientEmail,
     subject: `New Inquiry from ${data.name}`,
     html: `
-      <h3>New Inquiry</h3>
+      <h2>New Inquiry</h2>
+
       <p><b>Name:</b> ${data.name}</p>
       <p><b>Email:</b> ${data.email}</p>
       <p><b>Country:</b> ${data.country}</p>
       <p><b>Product:</b> ${data.product}</p>
-      <p><b>Message:</b> ${data.message}</p>
+
+      <p><b>Message:</b></p>
+      <p>${data.message}</p>
     `
   })
 }
