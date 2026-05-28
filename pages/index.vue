@@ -54,7 +54,7 @@ useSeoMeta({
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-emerald-500/30 transition-all duration-300 shadow-xl">
             <div class="h-52 overflow-hidden relative">
-              <img src="/img/products/agri-machinery.jpg" alt="Agricultural Implements" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" ></img>
+              <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=600&auto=format&fit=crop" alt="Agricultural Implements" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></img>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Agricultural Machinery</h3>
@@ -65,7 +65,7 @@ useSeoMeta({
 
           <div class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-emerald-500/30 transition-all duration-300 shadow-xl">
             <div class="h-52 overflow-hidden relative">
-              <img src="/img/products/construction.jpg" alt="Construction Equipment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" ></img>
+              <img src="https://images.unsplash.com/photo-1579535812821-c1ef34cc118a?q=80&w=600&auto=format&fit=crop" alt="Construction Equipment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></img>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Construction Machinery</h3>
@@ -76,7 +76,7 @@ useSeoMeta({
 
           <div class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-emerald-500/30 transition-all duration-300 shadow-xl">
             <div class="h-52 overflow-hidden relative">
-              <img src="/img/products/irrigation.jpg" alt="Plant Protection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" ></img>
+              <img src="https://images.unsplash.com/photo-1563514223741-21b45287a431?q=80&w=600&auto=format&fit=crop" alt="Plant Protection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></img>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Plant Protection & Drip</h3>
@@ -87,7 +87,7 @@ useSeoMeta({
 
           <div class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-emerald-500/30 transition-all duration-300 shadow-xl">
             <div class="h-52 overflow-hidden relative">
-              <img src="/img/products/spare-parts.jpg" alt="Spare Parts" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" ></img>
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=600&auto=format&fit=crop" alt="Premium Spare Parts" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></img>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Premium Spare Parts</h3>
@@ -119,7 +119,7 @@ useSeoMeta({
             </div>
           </div>
           <div class="relative bg-slate-800/40 p-2 rounded-2xl border border-slate-700/50">
-            <img src="/img/consolidation-shipping.jpg" alt="Container Sourcing Consolidation" class="rounded-xl w-full object-cover h-80" ></img>
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop" alt="Container Sourcing Consolidation" class="rounded-xl w-full object-cover h-80"></img>
           </div>
         </div>
       </div>
