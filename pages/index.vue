@@ -8,10 +8,12 @@ useSeoMeta({
 <template>
   <main class="min-h-screen bg-slate-950 text-slate-100 antialiased selection:bg-emerald-500/30 selection:text-emerald-400">
 
+    <!-- 1. 顶奢大图首屏 (Hero Area) -->
     <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden border-b border-slate-900">
       <div class="absolute inset-0 z-0">
+        <!-- 替换为网络背景图 -->
         <img 
-          src="/img/hero-bg.jpg" 
+          src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=1600&auto=format&fit=crop" 
           alt="Hecoth Machinery Supply Chain" 
           class="w-full h-full object-cover scale-105"
         ></img>
@@ -44,6 +46,7 @@ useSeoMeta({
       </div>
     </section>
 
+    <!-- 2. 四品类网格卡片流 (Product Range) -->
     <section class="py-24 bg-slate-950">
       <div class="container mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto mb-16">
@@ -52,9 +55,10 @@ useSeoMeta({
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- 卡片 1: 农业机械 (网络图) -->
           <div class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-emerald-500/30 transition-all duration-300 shadow-xl">
             <div class="h-52 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=600&auto=format&fit=crop" alt="Agricultural Implements" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></img>
+              <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=600&auto=format&fit=crop" alt="Agricultural Implements" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" ></img>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Agricultural Machinery</h3>
@@ -63,9 +67,10 @@ useSeoMeta({
             </div>
           </div>
 
+          <!-- 卡片 2: 工程机械 (网络图) -->
           <div class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-emerald-500/30 transition-all duration-300 shadow-xl">
             <div class="h-52 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1579535812821-c1ef34cc118a?q=80&w=600&auto=format&fit=crop" alt="Construction Equipment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></img>
+              <img src="https://images.unsplash.com/photo-1579535812821-c1ef34cc118a?q=80&w=600&auto=format&fit=crop" alt="Construction Equipment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" ></img>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Construction Machinery</h3>
@@ -74,9 +79,10 @@ useSeoMeta({
             </div>
           </div>
 
+          <!-- 卡片 3: 植保与滴灌 (网络图) -->
           <div class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-emerald-500/30 transition-all duration-300 shadow-xl">
             <div class="h-52 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1563514223741-21b45287a431?q=80&w=600&auto=format&fit=crop" alt="Plant Protection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></img>
+              <img src="https://images.unsplash.com/photo-1563514223741-21b45287a431?q=80&w=600&auto=format&fit=crop" alt="Plant Protection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" ></img>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Plant Protection & Drip</h3>
@@ -85,9 +91,10 @@ useSeoMeta({
             </div>
           </div>
 
+          <!-- 卡片 4: 机械零配件 (网络图) -->
           <div class="group bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-emerald-500/30 transition-all duration-300 shadow-xl">
             <div class="h-52 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=600&auto=format&fit=crop" alt="Premium Spare Parts" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></img>
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=600&auto=format&fit=crop" alt="Spare Parts" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" ></img>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Premium Spare Parts</h3>
@@ -99,6 +106,7 @@ useSeoMeta({
       </div>
     </section>
 
+    <!-- 3. 核心优势：多工厂集装箱拼箱服务 (Strategic Value) -->
     <section class="py-24 bg-slate-900/30 border-t border-slate-800/60">
       <div class="container mx-auto px-6 max-w-6xl">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -119,12 +127,14 @@ useSeoMeta({
             </div>
           </div>
           <div class="relative bg-slate-800/40 p-2 rounded-2xl border border-slate-700/50">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop" alt="Container Sourcing Consolidation" class="rounded-xl w-full object-cover h-80"></img>
+            <!-- 替换为网络集装箱图 -->
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop" alt="Container Sourcing Consolidation" class="rounded-xl w-full object-cover h-80" ></img>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- 4. 底部行动区 (CTA) -->
     <section class="py-20 text-center bg-gradient-to-t from-slate-950 to-slate-900 border-t border-slate-800/50">
       <div class="container mx-auto px-6 max-w-3xl">
         <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Direct Access to Sourcing Expertise</h2>
