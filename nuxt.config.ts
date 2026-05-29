@@ -7,7 +7,25 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
 
-  // 核心防御：强行给整个项目的站点 URL 注入绝对安全的非空兜底值
+  // 核心拦截：强制重写数据驱动，彻底避开底层文件的 replace 错误
+  nitro: {
+    storage: {
+      cache: {
+        driver: 'memory'
+      }
+    },
+    devStorage: {
+      cache: {
+        driver: 'memory'
+      }
+    },
+    prerender: {
+      crawlLinks: false,
+      routes: [],
+      failOnError: false 
+    }
+  },
+
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL || 'https://localhost:3000',
     name: 'Agricultural Machinery Export'
@@ -25,7 +43,6 @@ export default defineNuxtConfig({
     googleClientEmail: process.env.GOOGLE_CLIENT_EMAIL || '',
     public: {
       web3FormsKey: process.env.WEB3FORMS_KEY || '',
-      // 显式兜底，彻底封死底层 framework 寻找 siteUrl 时引发的 replace 崩溃
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://localhost:3000'
     }
   },
@@ -64,13 +81,5 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css'],
-  compatibilityDate: '2024-04-03',
-
-  nitro: {
-    prerender: {
-      crawlLinks: false,
-      routes: [],
-      failOnError: false 
-    }
-  }
+  compatibilityDate: '2024-04-03'
 })
