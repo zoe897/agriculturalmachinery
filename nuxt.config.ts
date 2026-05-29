@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
 
-  // 核心拦截：强制重写数据驱动，彻底避开底层文件的 replace 错误
+  // 核心修复：强制重写 Nitro 存储驱动为内存模式，彻底绕开 Vercel 盘符路径报错
   nitro: {
     storage: {
       cache: {
@@ -20,12 +20,13 @@ export default defineNuxtConfig({
       }
     },
     prerender: {
-      crawlLinks: false,
+      crawlLinks: false, // 阻止爬虫盲目抓取导致未知变量未定义
       routes: [],
-      failOnError: false 
+      failOnError: false   // 即使预渲染有些许警告，也不要卡死整个 Build 流程
     }
   },
 
+  // 保持你现有的站点配置
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL || 'https://localhost:3000',
     name: 'Agricultural Machinery Export'
@@ -76,7 +77,7 @@ export default defineNuxtConfig({
 
   content: {
     experimental: {
-      search: false 
+      search: false // 关闭实验性搜索，防止其在预渲染期间强制生成 SQLite 索引文件
     }
   },
 
