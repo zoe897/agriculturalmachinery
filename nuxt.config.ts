@@ -17,7 +17,6 @@ export default defineNuxtConfig({
   runtimeConfig: {
     resendApiKey: process.env.RESEND_API_KEY || '',
     googleClientEmail: process.env.GOOGLE_CLIENT_EMAIL || '',
-
     public: {
       web3FormsKey: process.env.WEB3FORMS_KEY || ''
     }
@@ -28,14 +27,14 @@ export default defineNuxtConfig({
     quality: 80
   },
 
-  // 1. 完全移除 routeRules 中的 prerender: true，断绝预渲染初始化
+  // 1. 彻底关闭路由级别的预渲染，转为全动态 SSR 模式
   routeRules: {
     '/': { ssr: true },
     '/products/**': { ssr: true }
   },
 
   app: {
-    baseURL: '/', // 2. 直接写死根路径，不走 process.env，彻底消灭路径 replace 报错
+    baseURL: '/', // 固定根路径，防止 replace 报错
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       htmlAttrs: { lang: 'en' },
@@ -51,15 +50,23 @@ export default defineNuxtConfig({
     }
   },
 
+  // 2. 核心修复：限制 @nuxt/content 模块在打包时的死锁行为
+  content: {
+    experimental: {
+      search: false // 如果你没用内置搜索，关掉它可以防止打包时对内容做深度索引替换
+    }
+  },
+
   css: ['~/assets/css/main.css'],
 
   compatibilityDate: '2024-04-03',
 
-  // 3. 彻底关闭 nitro 的预渲染行为
+  // 3. 彻底封死 Nitro 级别的所有预渲染行为
   nitro: {
     prerender: {
       crawlLinks: false,
-      routes: []
+      routes: [],
+      failOnError: false // 即使有残留的异步任务失败，也绝不卡死打包
     }
   }
 })
