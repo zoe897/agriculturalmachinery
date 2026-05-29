@@ -7,6 +7,12 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
 
+  // 核心修复：强制给全站赋予一个绝对不会为 undefined 的默认 URL，避免底层的 .replace() 报错
+  site: {
+    url: 'https://localhost:3000',
+    name: 'Agricultural Machinery Export'
+  },
+
   nitro: {
     storage: {
       cache: { driver: 'memory' }
@@ -34,11 +40,6 @@ export default defineNuxtConfig({
     }
   },
 
-  site: {
-    url: process.env.NUXT_PUBLIC_SITE_URL || 'https://localhost:3000',
-    name: 'Agricultural Machinery Export'
-  },
-
   components: [
     {
       path: '~/components',
@@ -51,7 +52,7 @@ export default defineNuxtConfig({
     googleClientEmail: process.env.GOOGLE_CLIENT_EMAIL || '',
     public: {
       web3FormsKey: process.env.WEB3FORMS_KEY || '',
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://localhost:3000'
+      siteUrl: 'https://localhost:3000'
     }
   },
 
