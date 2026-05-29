@@ -27,5 +27,9 @@
     "@nuxtjs/sitemap": "^6.0.1",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "lucide-vue-next": "^0.444.0"
+  },
+  "engines": {
+    "node": ">=20.0.0 <21.0.0",
+    "pnpm": ">=9.0.0"
   }
 }
