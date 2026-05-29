@@ -7,6 +7,12 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
 
+  // 核心防御：强行给整个项目的站点 URL 注入绝对安全的非空兜底值
+  site: {
+    url: process.env.NUXT_PUBLIC_SITE_URL || 'https://localhost:3000',
+    name: 'Agricultural Machinery Export'
+  },
+
   components: [
     {
       path: '~/components',
@@ -18,7 +24,9 @@ export default defineNuxtConfig({
     resendApiKey: process.env.RESEND_API_KEY || '',
     googleClientEmail: process.env.GOOGLE_CLIENT_EMAIL || '',
     public: {
-      web3FormsKey: process.env.WEB3FORMS_KEY || ''
+      web3FormsKey: process.env.WEB3FORMS_KEY || '',
+      // 显式兜底，彻底封死底层 framework 寻找 siteUrl 时引发的 replace 崩溃
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://localhost:3000'
     }
   },
 
@@ -27,14 +35,13 @@ export default defineNuxtConfig({
     quality: 80
   },
 
-  // 1. 彻底关闭路由级别的预渲染，转为全动态 SSR 模式
   routeRules: {
     '/': { ssr: true },
     '/products/**': { ssr: true }
   },
 
   app: {
-    baseURL: '/', // 固定根路径，防止 replace 报错
+    baseURL: '/', 
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       htmlAttrs: { lang: 'en' },
@@ -50,23 +57,20 @@ export default defineNuxtConfig({
     }
   },
 
-  // 2. 核心修复：限制 @nuxt/content 模块在打包时的死锁行为
   content: {
     experimental: {
-      search: false // 如果你没用内置搜索，关掉它可以防止打包时对内容做深度索引替换
+      search: false 
     }
   },
 
   css: ['~/assets/css/main.css'],
-
   compatibilityDate: '2024-04-03',
 
-  // 3. 彻底封死 Nitro 级别的所有预渲染行为
   nitro: {
     prerender: {
       crawlLinks: false,
       routes: [],
-      failOnError: false // 即使有残留的异步任务失败，也绝不卡死打包
+      failOnError: false 
     }
   }
 })
