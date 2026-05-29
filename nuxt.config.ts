@@ -1,42 +1,30 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
+  // 只保留三个最基础的、完全兼容的核心模块
   modules: [
     '@nuxt/content',
     '@nuxt/image',
     '@nuxtjs/tailwindcss'
   ],
 
-  // 核心修复：强制给全站赋予一个绝对不会为 undefined 的默认 URL，避免底层的 .replace() 报错
-  site: {
-    url: 'https://localhost:3000',
-    name: 'Agricultural Machinery Export'
-  },
-
+  // 彻底禁止一切预渲染行为
   nitro: {
-    storage: {
-      cache: { driver: 'memory' }
-    },
-    devStorage: {
-      cache: { driver: 'memory' }
-    },
     prerender: {
       crawlLinks: false,
       routes: []
     }
   },
 
+  // 强制全站走动态服务器渲染 (SSR)
   routeRules: {
     '/': { ssr: true },
     '/**': { ssr: true }
   },
 
   content: {
-    prerender: {
-      routes: []
-    },
-    experimental: {
-      search: false
+    markdown: {
+      mdc: true
     }
   },
 
@@ -52,7 +40,7 @@ export default defineNuxtConfig({
     googleClientEmail: process.env.GOOGLE_CLIENT_EMAIL || '',
     public: {
       web3FormsKey: process.env.WEB3FORMS_KEY || '',
-      siteUrl: 'https://localhost:3000'
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://localhost:3000'
     }
   },
 
